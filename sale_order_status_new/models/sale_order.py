@@ -8,7 +8,9 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     situation = fields.Selection([
+        ('gestion', 'Gestion'),
         ('processed', 'Processed'),
         ('in_sample', 'In sample'),
         ('production', 'Production'),
+        ('transport', 'Transport'),
     ],tracking=3, default='processed')

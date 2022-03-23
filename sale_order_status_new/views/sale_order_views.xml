@@ -5,7 +5,7 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='payment_term_id']" position="after">
-                <field name="situation" decoration-success="situation == 'production'" decoration-info="situation == 'in_sample'" decoration-warning="situation == 'processed'"  widget="badge"/>
+                <field name="situation" />
             </xpath>
         </field>
     </record>
@@ -16,7 +16,7 @@
         <field name="inherit_id" ref="sale.view_quotation_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="after">
-                <field name="situation" decoration-success="situation == 'production'" decoration-info="situation == 'in_sample'" decoration-warning="situation == 'processed'"  widget="badge"/>
+                <field name="situation"  decoration-danger="situation == 'gestion'" decoration-success="situation == 'production'" decoration-info="situation == 'in_sample'" decoration-warning="situation == 'processed'"  widget="badge"/>
             </xpath>
         </field>
     </record>
