@@ -3,7 +3,8 @@
 
 {
     "name": "Sale order line print html",
-    "author": "Sale order line print html",
+    "author": "DDL-Xtendoo",
+    "company": "Xtendoo",
     "summary": "Sale order line print html",
     "version": "15.0.1.0.0",
     "category": "Extra-tools",
