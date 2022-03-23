@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+    <!-- Herencia del tenplate del informe-->
+         <template id="report_saleorder_document"
+              inherit_id="sale.report_saleorder_document">
+            <xpath expr='//table/tbody[@class="sale_tbody"]//tr' position="after">
+                <tr t-if="line.product_id.description != '' or line.product_id.product_tmpl_id.product_template_image_ids">
+                    <td></td>
+                    <td name="td_description_notes" colspan="99" style="margin-bottom:5px;">
+                        <span t-if="line.product_id.description != ''" t-raw="line.product_id.description"></span>
+                        <div t-if="line.product_id.product_tmpl_id.product_template_image_ids">
+                            <t t-foreach="line.product_id.product_tmpl_id.product_template_image_ids" t-as="product_img">
+                            <img style="width:20%;"
+                                t-attf-src="data:image/*;base64,{{product_img.image_1920}}"
+                                t-att-alt="line.product_id"
+                            />
+                        </t>
+                        </div>
+                    </td>
+                </tr>
+            </xpath>
+        </template>
+    <!-- Fin Herencia del tenplate del informe-->
+    </data>
+</odoo>
+
