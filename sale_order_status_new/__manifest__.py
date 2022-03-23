@@ -3,7 +3,8 @@
 
 {
     "name": "Sale order status new",
-    "author": "Sale order status new",
+    "author": "DDL-Xtendoo",
+    "company": "Xtendoo",
     "summary": "Sale order status new",
     "version": "15.0.1.0.0",
     "category": "Extra-tools",
