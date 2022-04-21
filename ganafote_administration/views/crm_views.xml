@@ -1,0 +1,17 @@
+<odoo>
+<!--   NO mostrar ingreso esperado-->
+    <record id="not_show_expected_revenue_in_crm" model="ir.ui.view">
+        <field name="name">not.show.expected.revenue.in.crm</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="arch" type="xml">
+             <field name="expected_revenue" position="attributes">
+                  <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+<!--   Fin no mostrar Ingro esperado-->
+</odoo>
+
+
+
