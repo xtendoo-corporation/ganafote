@@ -11,17 +11,19 @@
             <field name="partner_to">{{ object.partner_id.id }}</field>
             <field name="subject">{{ object.company_id.name }} {{ (object.get_portal_last_transaction().state == 'pending') and 'Pending Order' or 'Order' }} (Ref {{ object.name or 'n/a' }})</field>
             <field name="body_html" type="html">
-                <div id="header">
-                    <div id="header_fig">
-                        <img class="img-fluid o_we_custom_image" src="https://i.postimg.cc/sDb9Wgxg/cabecera.png" width="1096" height="453" style="border-style:none;box-sizing:border-box;display:inline-block;height:auto;max-width:100%;vertical-align:middle;"/>
+                 <div id="header">
+                    <div id="header_fig" style="width:70%;float:left;">
+                        <img class="img-fluid o_we_custom_image" src="https://i.postimg.cc/fR2Wj9CQ/cabecera.png" width="1096" height="453" style="border-style:none;box-sizing:border-box;display:inline-block;height:auto;max-width:100%;vertical-align:middle;"/>
                     </div>
-                    <div style="position:relative;top:-280px;right:-500px;font-size:2em;">
-                         <span style="color:#83c200">Pedido</span>
-                         <span><t t-out="object.name" data-oe-t-inline="true" contenteditable="false"></t></span>
-                         <span style="color:#83c200"> Enviado</span>
+                    <div style="width:30%;float:left;font-size:2em;margin-top:20%;margin-left:-30%;overflow:visible">
+                        <p style="display:block;width:150%;">
+                            <span style="color:#83c200">Pedido</span>
+                            <span><t t-out="object.name" data-oe-t-inline="true" contenteditable="false"></t></span>
+                            <span style="color:#83c200"> Enviado</span>
+                        </p>
                     </div>
                 </div>
-                <div id="content" style="width:80%;margin:10px auto;font-size:1.5em;color:black;">
+                <div id="content" style="clear:both;width:80%;margin:10px auto;font-size:1.5em;color:black;">
                     <p>Hola  <span style="color:#83c200"><t t-out="object.partner_id.name" data-oe-t-inline="true" contenteditable="false"></t></span></p>
                     <p>
                         Su pedido <span style="color:#83c200"><span><t t-out="object.name" data-oe-t-inline="true" contenteditable="false"></t></span> </span> acaba de salir de nuestras instalaciones y está en proceso de entrega. Esta se llevara a cabo según las indicaciones y direcciones dadas.
@@ -32,6 +34,27 @@
                 <div id="footer">
                     <img class="img-fluid o_we_custom_image" src="https://i.postimg.cc/wjfyC6Rd/banner-abajo.png" alt=""/>
                 </div>
+<!--                <div id="header">-->
+<!--                    <div id="header_fig" style="z-index:0;">-->
+<!--                        <img class="img-fluid o_we_custom_image" src="https://i.postimg.cc/sDb9Wgxg/cabecera.png" width="1096" height="453" style="border-style:none;box-sizing:border-box;display:inline-block;height:auto;max-width:100%;vertical-align:middle;"/>-->
+<!--                    </div>-->
+<!--                    <div style="position:relative;top:-280px;right:-500px;font-size:2em;z-index:1;">-->
+<!--                         <span style="color:#83c200">Pedido</span>-->
+<!--                         <span><t t-out="object.name" data-oe-t-inline="true" contenteditable="false"></t></span>-->
+<!--                         <span style="color:#83c200"> Enviado</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div id="content" style="width:80%;margin:10px auto;font-size:1.5em;color:black;">-->
+<!--                    <p>Hola  <span style="color:#83c200"><t t-out="object.partner_id.name" data-oe-t-inline="true" contenteditable="false"></t></span></p>-->
+<!--                    <p>-->
+<!--                        Su pedido <span style="color:#83c200"><span><t t-out="object.name" data-oe-t-inline="true" contenteditable="false"></t></span> </span> acaba de salir de nuestras instalaciones y está en proceso de entrega. Esta se llevara a cabo según las indicaciones y direcciones dadas.-->
+<!--                     </p>-->
+<!--                     <p>-->
+<!--                        Si deseas realizar un seguimiento del paquete a través de nuestro servicio de mensajería podrá consultar su situación con el <span style="color:#83c200">número de seguimiento correspondiente</span> haciendo clic en el siguiente botón</p>-->
+<!--                </div>-->
+<!--                <div id="footer">-->
+<!--                    <img class="img-fluid o_we_custom_image" src="https://i.postimg.cc/wjfyC6Rd/banner-abajo.png" alt=""/>-->
+<!--                </div>-->
             </field>
             <field name="report_name">Quotation_${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}</field>
             <field name="lang">${object.partner_id.lang}</field>
