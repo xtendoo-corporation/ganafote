@@ -19,7 +19,7 @@
                         <p style="display:block;width:150%;">
                             <span style="color:#83c200">Pedido</span>
                             <span><t t-out="object.name" data-oe-t-inline="true" contenteditable="false"></t></span>
-                            <span style="color:#83c200"> Enviado</span>
+                            <span style="color:#83c200"> Entregado</span>
                         </p>
                     </div>
                 </div>
