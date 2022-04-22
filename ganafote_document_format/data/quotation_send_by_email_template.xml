@@ -15,7 +15,7 @@
                     <div id="header_fig">
                         <img class="img-fluid o_we_custom_image" src="https://i.postimg.cc/sDb9Wgxg/cabecera.png" width="1096" height="453" style="border-style:none;box-sizing:border-box;display:inline-block;height:auto;max-width:100%;vertical-align:middle;"/>
                     </div>
-                    <div style="position:relative;top:-300px;right:-600px;font-size:2em;">
+                    <div style="position:relative;top:-300px;right:-550px;font-size:2em;">
                          <span style="color:#83c200">Pedido</span>
                          <span><t t-out="object.name" data-oe-t-inline="true" contenteditable="false"></t></span>
                          <span style="color:#83c200"> Enviado</span>
