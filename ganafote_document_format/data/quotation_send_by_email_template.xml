@@ -2,20 +2,21 @@
 <odoo>
      <!-- Mail template are declared in a NOUPDATE block
          so users can freely customize/delete them -->
-    <data noupdate="1">
+    <data noupdate="0">
         <!--Email template -->
         <record id="ganafote_document_format.email_template_quotation_send" model="mail.template">
             <field name="name">Pedido Enviado</field>
             <field name="model_id" ref="sale.model_sale_order"/>
-            <field name="email_from">${(object.partner_id.email_formatted or user.email_formatted) |safe}</field>
-            <field name="partner_to">${object.partner_id.id}</field>
-            <field name="subject">${object.company_id.name} Pedido (Ref ${object.name or 'n/a'})</field>
+            <field name="email_from">{{ (object.user_id.email_formatted or user.email_formatted) }}</field>
+            <field name="partner_to">{{ object.partner_id.id }}</field>
+            <field name="subject">{{ object.company_id.name }} {{ (object.get_portal_last_transaction().state == 'pending') and 'Pending Order' or 'Order' }} (Ref {{ object.name or 'n/a' }})</field>
             <field name="body_html" type="html">
                 <div id="header">
                     <div id="header_fig">
-                        <img class="img-fluid o_we_custom_image" src="/web/image/938-964ed957/cabecera.png?access_token=6685fd0b-efd1-46f0-82a7-ebc960a7846f" width="1096" height="453" style="border-style:none;box-sizing:border-box;display:inline-block;height:auto;max-width:100%;vertical-align:middle;"/>
+                        <img class="img-fluid o_we_custom_image" src="https://i.postimg.cc/sDb9Wgxg/cabecera.png" width="1096" height="453" style="border-style:none;box-sizing:border-box;display:inline-block;height:auto;max-width:100%;vertical-align:middle;"/>
                     </div>
                     <div style="position:absolute;top:50px;right:30px;font-size:2em;">
+                    <br />
                          <span style="color:#83c200">Pedido</span>
                          <span><t t-out="object.name" data-oe-t-inline="true" contenteditable="false"></t></span>
                          <span style="color:#83c200"> Enviado</span>
@@ -30,12 +31,12 @@
                         Si deseas realizar un seguimiento del paquete a través de nuestro servicio de mensajería podrá consultar su situación con el <span style="color:#83c200">número de seguimiento correspondiente</span> haciendo clic en el siguiente botón</p>
                 </div>
                 <div id="footer">
-                    <img class="img-fluid o_we_custom_image" src="/web/image/947-a5c78787/banner%20abajo.png?access_token=7dd62b55-66b9-44e6-9c9f-c0580aca3749" alt=""/>
+                    <img class="img-fluid o_we_custom_image" src="https://i.postimg.cc/wjfyC6Rd/banner-abajo.png" alt=""/>
                 </div>
             </field>
             <field name="report_name">Quotation_${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}</field>
             <field name="lang">${object.partner_id.lang}</field>
-            <field name="use_default_to" eval="True"/>
+            <field name="use_default_to" eval="False"/>
             <field name="auto_delete" eval="True"/>
         </record>
     </data>
