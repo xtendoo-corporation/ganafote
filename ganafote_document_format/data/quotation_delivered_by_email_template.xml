@@ -15,8 +15,8 @@
                     <div id="header_fig" style="width:70%;float:left;">
                         <img class="img-fluid o_we_custom_image" src="https://i.postimg.cc/fR2Wj9CQ/cabecera.png" width="1096" height="453" style="border-style:none;box-sizing:border-box;display:inline-block;height:auto;max-width:100%;vertical-align:middle;"/>
                     </div>
-                    <div style="width:30%;float:left;font-size:2em;margin-top:20%;overflow:visible">
-                        <p style="display:block;width:150%;margin-left:-30%;">
+                    <div style="display:block;width:30%;float:left;font-size:2em;margin-top:20%;overflow:visible">
+                        <p style="display:block;width:150%;margin-left:-30%;overflow:visible;position;absolute;top:350px;right:150px;">
                             <span style="color:#83c200">Pedido</span>
                             <span><t t-out="object.name" data-oe-t-inline="true" contenteditable="false"></t></span>
                             <span style="color:#83c200"> Entregado</span>
