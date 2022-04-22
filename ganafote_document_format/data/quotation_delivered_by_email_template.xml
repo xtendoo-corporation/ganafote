@@ -41,7 +41,6 @@
                 <div id="footer">
                     <img class="img-fluid o_we_custom_image" src="https://i.postimg.cc/wjfyC6Rd/banner-abajo.png" alt=""/>
                 </div>
-<!--
             </field>
             <field name="report_name">Quotation_${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}</field>
             <field name="lang">${object.partner_id.lang}</field>
