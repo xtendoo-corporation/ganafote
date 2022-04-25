@@ -13,7 +13,9 @@
             <field name="body_html" type="html">
                  <div id="header">
                     <div id="header_fig" style="width:100%;">
-                        <img class="img-fluid o_we_custom_image" src="https://i.postimg.cc/sDb9Wgxg/cabecera.png" width="1096" height="453" style="border-style:none;box-sizing:border-box;display:inline-block;height:auto;max-width:100%;vertical-align:middle;"/>
+                        <a href="https://ganafote.xtendoo.es">
+                            <img class="img-fluid o_we_custom_image" src="https://i.postimg.cc/sDb9Wgxg/cabecera.png" width="1096" height="453" style="border-style:none;box-sizing:border-box;display:inline-block;height:auto;max-width:100%;vertical-align:middle;"/>
+                        </a>
                     </div>
                 </div>
                 <div id="content" style="clear:both;width:80%;margin:10px auto;font-size:1.5em;color:black;">
@@ -21,23 +23,24 @@
                     <p>
                         Su pedido ha sido tramitado con éxito a nuestra fábrica. Le mandaremos otro e-mail cuando el pedido salga de nuestras instalaciones. Recuerde que antes de la producción final, nuestro departamento de diseño le mandará una imagen de la muestra que deberá ser aceptada para poder continuar con la producción en caso de que el pedido sea nuevo. El pedido una vez tramitado no podrá ser modificado. La fecha estimada de entrega se indica a continuación.
                     </p>
-                    <div style="display:block;width:45%;float:left;background-color:black;margin-right:5%;">
-                        <p style="margin-top:5px;display:block;width:100%;text-align:center;color:white">FECHA DE ENTREGA ESTIMADA</p>
+                    <div style="font-size:0.8em;display:block;width:45%;float:left;background-color:black;margin-right:5%;min-height:45px;">
+                        <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white">FECHA DE ENTREGA ESTIMADA</p>
                     </div>
-                    <div style="margin-top:10px;display:block;width:45%;float:left;margin-left:5%;">
-                        <p><span><t t-out="object.commitment_date.strftime('%d/%m/%Y')" data-oe-t-inline="true" contenteditable="false"></t></span></p>
+
+                    <div style="font-size:0.8em;display:block;width:45%;float:left;margin-left:5%;background-color:#96C11E;min-height:45px;">
+                        <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white;"><span><t if="object.commitment_date" t-out="object.commitment_date.strftime('%d/%m/%Y')" data-oe-t-inline="true" contenteditable="false"></t></span></p>
                     </div>
-                     <div style="margin-top:10px;margin-top:10px;display:block;width:45%;float:left;background-color:black;margin-right:5%;clear:both;">
-                        <p style="display:block;width:100%;text-align:center;color:white">DIRECCIÓN DE ENVÍO</p>
+                     <div style="font-size:0.8em;margin-top:10px;margin-top:10px;display:block;width:45%;float:left;background-color:black;margin-right:5%;clear:both;min-height:45px;">
+                        <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white">DIRECCIÓN DE ENVÍO</p>
                     </div>
-                    <div style="display:block;width:45%;float:left;margin-left:5%;">
-                        <p><span><t t-out="object.commitment_date.strftime('%d/%m/%Y')" data-oe-t-inline="true" contenteditable="false"></t></span></p>
+                    <div style="margin-top:10px;font-size:0.8em;display:block;width:45%;float:left;margin-left:5%;background-color:#96C11E; min-height:45px;">
+                        <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white;"><span><t  t-out="object.partner_shipping_id.street" data-oe-t-inline="true" contenteditable="false"></t></span></p>
                     </div>
-                    <div style="margin-top:10px;display:block;width:45%;float:left;background-color:black;margin-right:5%;clear:both;">
-                        <p style="display:block;width:100%;text-align:center;color:white">IMPORTE TOTAL DEL PEDIDO</p>
+                    <div style="font-size:0.8em;margin-top:10px;display:block;width:45%;float:left;background-color:black;margin-right:5%;clear:both;min-height:45px;">
+                        <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white">IMPORTE TOTAL DEL PEDIDO</p>
                     </div>
-                    <div style="margin-top:10px;display:block;width:45%;float:left;margin-left:5%;">
-                        <p><span><t t-out="object.amount_total" data-oe-t-inline="true" contenteditable="false"></t> €</span></p>
+                    <div style="margin-top:10px;font-size:0.8em;margin-top:10px;display:block;width:45%;float:left;margin-left:5%;background-color:#96C11E;min-height:45px;">
+                        <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white"><span><t t-out="object.amount_total" data-oe-t-inline="true" contenteditable="false"></t> €</span></p>
                     </div>
                 </div>
                 <div id="footer">
