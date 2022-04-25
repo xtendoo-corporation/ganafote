@@ -3,11 +3,17 @@
         <field name="name">email.template.whitout.hf</field>
         <field name="inherit_id" ref="mail.mail_notification_paynow"/>
         <field name="arch" type="xml">
-            <xpath expr="//t/table/tr/td/table/tbody/tr/td/table" position="replace">
+           <xpath expr="//t/table/tr/td/table/tbody/tr/td/table" position="replace">
             </xpath>
-            <xpath expr="//t/table/tr/td/table/tbody/tr[2]" position="replace">
+            <xpath expr="//t/table/tr/td/table/tbody/tr[1]" position="replace">
             </xpath>
-            <xpath expr="//t/table/tr[1]" position="replace">
+             <xpath expr="//t/table/tr/td/table/tbody/tr[2]" position="replace">
+            </xpath>
+            <xpath expr="//t/table/tr[2]" position="replace">
+              <tr>
+                  <td align="center" style="margin-top:-10px;min-width: 590px; padding: 8px; font-size:11px;">
+                  </td>
+              </tr>
             </xpath>
         </field>
     </record>
