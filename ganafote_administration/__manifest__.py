@@ -11,7 +11,8 @@
     "website": "https://xtendoo.es",
     "depends": [
         "base",
-        "sale_margin"
+        "sale_margin",
+        "sale"
     ],
     "data": [
         "views/res_partner_views.xml",
