@@ -11,6 +11,7 @@
     "depends": [
         "sale",
         "mail",
+        "account",
     ],
     "data": [
         "data/quotation_confirmation_by_email_template.xml",
