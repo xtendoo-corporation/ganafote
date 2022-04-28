@@ -75,27 +75,31 @@
               </xpath>
             <xpath expr="//div[hasclass('clearfix')]" position="after">
                 <div style="width:100%;display:block">
-                    <div style="width:100%;border:2px solid black;margin-top:10px;">
-                        <div style="color:white;width:100%;background-color:black;">
-                            <p style="display:block;width:100%;text-align:center;">Observaciones</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <div style="width:100%;margin-top:10px;">
+                        <div>
+                            <p style="font-weight:bolder">Observaciones</p>
                         </div>
-                        <p style="display:block;width:100%;text-align:center;">DISEÑOS GRATUITOS.</p>
-                        <p style="display:block;width:100%;text-align:center;">LOS DISEÑOS SON GRATUTITOS SIEMPRE QUE LLEVE UN PEDIDO SOLICITADO Y ACEPTADO POR EL CLIENTE.
-INCLUIDOS NOMBRE, NÚMERO, LOGOS DE PATROCINADORES, ESLOGAN, LEYENDAS… TODO CERRADO EN PRENDAS SUBLI.
-TODAS LAS PRENDAS VIENEN INDIVIDUALMENTE PLASTIFICADAS, PLANCHADAS.
-PLAZOS DE ENTREGA = UNA VEZ INGRESADO EL 50%, PEDIDO CERRADO Y DISEÑOS ACEPTADOS, NECESITAMOS 3-4 SEMANAS.</p>
+                        <p>Diseños gratuitos.</p>
+                        <p style="display:block;width:100%;">Los diseños son gratuitos siempre que lleve un pedido solicitado y aceptado por el cliente.Incluidos nombre, número, logos de patrocinadores, eslogan, leyendas...Todo cerrado en prendas subli. Todas las prendas vienen individualmente plastificadas y planchadas. Plazos de entrega = una vez ingresado el 50%, pedido cerrado y diseños aceptados, necesitamos 3-4 semanas.</p>
                     </div>
-                </div>
-                <div style="width:100%;border:2px solid black;margin-top:10px;">
-                    <p style="display:block;width:100%;text-align:center;font-weight:bolder;margin-top:5px;">CUENTA GAÑAFOTE SLU = IBAN ES38 2100 2697 9302 1015 4934</p>
-                </div>
-                <table>
-                    <tr>
-                        <td>
-                             <div style="width:100%;display:block">
-                    <div style="width:100%;border:2px solid black;margin-top:10px;">
-                        <div style="color:white;width:100%;background-color:black;">
-                            <p style="display:block;width:100%;text-align:center;">Condiciones tras la aceptación del presupuesto</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="width:100%;margin-top:10px;">
+                                    <p style="display:block;width:100%;font-weight:bolder;margin-top:5px;">CUENTA GAÑAFOTE SLU = IBAN ES38 2100 2697 9302 1015 4934</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="width:100%;display:block">
+                    <div style="width:100%;margin-top:10px;">
+                        <div>
+                            <p style="display:block;width:100%;font-weight:bolder;;">Condiciones tras la aceptación del presupuesto</p>
                         </div>
                         <p style="display:block;width:100%;margin-left:5px;">1. El cliente debe saber que las maquetaciones en 3D son una aproximación al diseño real</p>
                         <p style="display:block;width:100%;margin-left:5px;">2. Los colores pueden tener alguna variación respecto al boceto digital. El cliente debe elegir los
@@ -111,9 +115,12 @@ puede verse incrementado en 1 o 2 semanas en "temporada alta".</p>
 
                     </div>
                 </div>
-                        </td>
-                    </tr>
-                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+              
             </xpath>
         </field>
     </record>
