@@ -1,0 +1,120 @@
+<odoo>
+    <record id="ganafote_report_saleorder_document" model="ir.ui.view">
+        <field name="name">ganafote.report.saleorder.document</field>
+        <field name="inherit_id" ref="sale.report_saleorder_document"/>
+        <field name="arch" type="xml">
+            <xpath expr="//table/thead" position="replace">
+                <thead style="display: table-row-group">
+                    <tr>
+                        <th name="th_description" class="text-left">Descripción</th>
+                        <th name="th_quantity" class="text-right">Cantidad</th>
+                        <th name="th_priceunit" class="text-right">Precio/U</th>
+                        <th name="th_discount" t-if="display_discount" class="text-right" groups="product.group_discount_per_so_line">
+                            <span>Desc.%</span>
+                        </th>
+                       <!-- <th name="th_taxes" class="text-right">Taxes</th>-->
+                        <th name="th_subtotal" class="text-right">
+                            <span groups="account.group_show_line_subtotals_tax_excluded">Total</span>
+                            <span groups="account.group_show_line_subtotals_tax_included">Total</span>
+                        </th>
+                    </tr>
+                </thead>
+            </xpath>
+             <xpath expr="//table/tbody" position="replace">
+                  <tbody class="sale_tbody">
+
+                    <t t-set="current_subtotal" t-value="0"/>
+
+                    <t t-foreach="doc.order_line" t-as="line">
+
+                        <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+                        <t t-set="current_subtotal" t-value="current_subtotal + line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+
+                        <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                            <t t-if="not line.display_type">
+                                <td name="td_name"><span t-field="line.name"/></td>
+                                <td name="td_quantity" class="text-right">
+                                    <span t-field="line.product_uom_qty"/>
+                                    <span t-field="line.product_uom"/>
+                                </td>
+                                <td name="td_priceunit" class="text-right">
+                                    <span t-field="line.price_unit"/>
+                                </td>
+                                <td t-if="display_discount" class="text-right" groups="product.group_discount_per_so_line">
+                                    <span t-field="line.discount"/>
+                                </td>
+                                <td name="td_subtotal" class="text-right o_price_total">
+                                    <span t-field="line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+                                    <span t-field="line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+                                </td>
+                            </t>
+                            <t t-if="line.display_type == 'line_section'">
+                                <td name="td_section_line" colspan="99">
+                                    <span t-field="line.name"/>
+                                </td>
+                                <t t-set="current_section" t-value="line"/>
+                                <t t-set="current_subtotal" t-value="0"/>
+                            </t>
+                            <t t-if="line.display_type == 'line_note'">
+                                <td name="td_note_line" colspan="99">
+                                    <span t-field="line.name"/>
+                                </td>
+                            </t>
+                        </tr>
+
+                        <t t-if="current_section and (line_last or doc.order_line[line_index+1].display_type == 'line_section')">
+                            <tr class="is-subtotal text-right">
+                                <td name="td_section_subtotal" colspan="99">
+                                    <strong class="mr16">Subtotal</strong>
+                                    <span t-esc="current_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </t>
+                </tbody>
+              </xpath>
+            <xpath expr="//div[hasclass('clearfix')]" position="after">
+                <div style="width:100%;display:block">
+                    <div style="width:100%;border:2px solid black;margin-top:10px;">
+                        <div style="color:white;width:100%;background-color:black;">
+                            <p style="display:block;width:100%;text-align:center;">Observaciones</p>
+                        </div>
+                        <p style="display:block;width:100%;text-align:center;">DISEÑOS GRATUITOS.</p>
+                        <p style="display:block;width:100%;text-align:center;">LOS DISEÑOS SON GRATUTITOS SIEMPRE QUE LLEVE UN PEDIDO SOLICITADO Y ACEPTADO POR EL CLIENTE.
+INCLUIDOS NOMBRE, NÚMERO, LOGOS DE PATROCINADORES, ESLOGAN, LEYENDAS… TODO CERRADO EN PRENDAS SUBLI.
+TODAS LAS PRENDAS VIENEN INDIVIDUALMENTE PLASTIFICADAS, PLANCHADAS.
+PLAZOS DE ENTREGA = UNA VEZ INGRESADO EL 50%, PEDIDO CERRADO Y DISEÑOS ACEPTADOS, NECESITAMOS 3-4 SEMANAS.</p>
+                    </div>
+                </div>
+                <div style="width:100%;border:2px solid black;margin-top:10px;">
+                    <p style="display:block;width:100%;text-align:center;font-weight:bolder;margin-top:5px;">CUENTA GAÑAFOTE SLU = IBAN ES38 2100 2697 9302 1015 4934</p>
+                </div>
+                <table>
+                    <tr>
+                        <td>
+                             <div style="width:100%;display:block">
+                    <div style="width:100%;border:2px solid black;margin-top:10px;">
+                        <div style="color:white;width:100%;background-color:black;">
+                            <p style="display:block;width:100%;text-align:center;">Condiciones tras la aceptación del presupuesto</p>
+                        </div>
+                        <p style="display:block;width:100%;margin-left:5px;">1. El cliente debe saber que las maquetaciones en 3D son una aproximación al diseño real</p>
+                        <p style="display:block;width:100%;margin-left:5px;">2. Los colores pueden tener alguna variación respecto al boceto digital. El cliente debe elegir los
+pantones de color para los productos presupuestados.</p>
+                        <p style="display:block;width:100%;margin-left:5px;">3. El cliente acepta el diseño 3D sabiendo que no podrá sufrir variaciones tras la aceptación. Una
+vez el pedido lanzado a fabrica no podrá verse modificado.</p>
+                        <p style="display:block;width:100%;margin-left:5px;">4. El cliente revisará y dará visto bueno al pedido enviado por el área de administración.
+Cualquier error del mismo, tras la revisión, será responsabilidad del cliente.</p>
+                        <p style="display:block;width:100%;margin-left:5px;">5. Una vez aceptado el diseño, GAÑAFOTE SLU no se hará responsable de los posibles errores
+tanto de ortografía, textos, formas, color, tamaño, talla, logos, etc.</p>
+                        <p style="display:block;width:100%;margin-left:5px;">6. Los tiempos de entregas será de 3 a 4 semanas en "temporada normal". Los tiempos de entregas
+puede verse incrementado en 1 o 2 semanas en "temporada alta".</p>
+
+                    </div>
+                </div>
+                        </td>
+                    </tr>
+                </table>
+            </xpath>
+        </field>
+    </record>
+</odoo>
