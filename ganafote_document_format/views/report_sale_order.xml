@@ -73,6 +73,19 @@
                     </t>
                 </tbody>
               </xpath>
+            <xpath expr="//div[hasclass('clearfix')]" position="replace">
+                <div class="clearfix" name="so_total_summary" style="width:200%!important;margin-left:-100%;">
+                <div id="total" class="row" name="total">
+                    <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
+                        <table class="table table-sm">
+                            <!-- Tax totals -->
+                            <t t-set="tax_totals" t-value="json.loads(doc.tax_totals_json)"/>
+                            <t t-call="account.document_tax_totals"/>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            </xpath>
             <xpath expr="//div[hasclass('clearfix')]" position="after">
                 <div style="width:100%;display:block">
                     <table>
