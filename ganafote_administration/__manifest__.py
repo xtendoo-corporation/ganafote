@@ -12,7 +12,8 @@
     "depends": [
         "base",
         "sale_margin",
-        "sale"
+        "sale",
+        "pragmatic_odoo_whatsapp_integration"
     ],
     "data": [
         "views/res_partner_views.xml",
