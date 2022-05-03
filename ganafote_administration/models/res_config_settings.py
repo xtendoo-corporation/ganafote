@@ -8,6 +8,8 @@ class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
     company_so_factory_template_id = fields.Many2one(
-        related="company_id.sale_order_factory_template_id", string="Default Template", readonly=False,
+        related="company_id.sale_order_factory_template_id",
+        string="Factory Default Template",
+        readonly=False,
         domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]")
 
