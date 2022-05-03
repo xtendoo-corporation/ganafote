@@ -28,7 +28,16 @@
                     </div>
 
                     <div style="font-size:0.8em;display:block;width:45%;float:left;margin-left:5%;background-color:#96C11E;min-height:45px;">
-                        <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white;"><span><t if="object.commitment_date" t-out="object.commitment_date.strftime('%d/%m/%Y')" data-oe-t-inline="true" contenteditable="false"></t></span></p>
+                        <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white;">
+                            <span>
+                               <t t-if="object.commitment_date" data-oe-t-group="2" data-oe-t-group-active="true" data-oe-t-inline="true">
+                                    <t t-out="object.commitment_date.strftime('%d/%m/%Y')" data-oe-t-inline="true" contenteditable="false"/>
+                               </t>
+                                <t t-else="">
+                                    <t t-out="object.expected_date.strftime('%d/%m/%Y')" data-oe-t-inline="true" contenteditable="false"/>
+                                </t>
+                            </span>
+                        </p>
                     </div>
                      <div style="font-size:0.8em;margin-top:10px;margin-top:10px;display:block;width:45%;float:left;background-color:black;margin-right:5%;clear:both;min-height:45px;">
                         <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white">DIRECCIÓN DE ENVÍO</p>
