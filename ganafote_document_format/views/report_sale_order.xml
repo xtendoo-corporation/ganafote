@@ -3,6 +3,18 @@
         <field name="name">ganafote.report.saleorder.document</field>
         <field name="inherit_id" ref="sale.report_saleorder_document"/>
         <field name="arch" type="xml">
+            <xpath expr="//h2[@class='mt16']" position="replace">
+                 <h2 class="mt16" style="background-color:black;color:#96c11e;">
+                    <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
+                        <span t-if="doc.state not in ['draft','sent']">Order # </span>
+                        <span t-if="doc.state in ['draft','sent']">Quotation # </span>
+                    </t>
+                    <t t-if="env.context.get('proforma', False) or is_pro_forma">
+                        <span>Pro-Forma Invoice # </span>
+                    </t>
+                    <span t-field="doc.name"/>
+                </h2>
+            </xpath>
             <xpath expr="//table/thead" position="replace">
                 <thead style="display: table-row-group">
                     <tr>
@@ -102,8 +114,8 @@
                         </tr>
                         <tr>
                             <td>
-                                <div style="width:100%;margin-top:10px;">
-                                    <p style="display:block;width:100%;font-weight:bolder;margin-top:5px;">CUENTA GAÑAFOTE SLU = IBAN ES38 2100 2697 9302 1015 4934</p>
+                                <div style="width:100%;margin-top:10px;background-color:black;">
+                                    <p style="display:block;width:100%;font-weight:bolder;margin-top:5px;color:#96c11e;margin-left:15px;">CUENTA GAÑAFOTE SLU = IBAN ES38 2100 2697 9302 1015 4934</p>
                                 </div>
                             </td>
                         </tr>

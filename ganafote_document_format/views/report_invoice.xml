@@ -3,6 +3,17 @@
         <field name="name">ganafote.report.invoice.document</field>
         <field name="inherit_id" ref="account.report_invoice_document"/>
         <field name="arch" type="xml">
+             <xpath expr="//div[@class='page']/h2" position="replace">
+                    <h2 style="background-color:black;color:#96c11e;">
+                        <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">Invoice</span>
+                        <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+                        <span t-if="o.move_type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+                        <span t-if="o.move_type == 'out_refund'">Credit Note</span>
+                        <span t-if="o.move_type == 'in_refund'">Vendor Credit Note</span>
+                        <span t-if="o.move_type == 'in_invoice'">Vendor Bill</span>
+                        <span t-if="o.name != '/'" t-field="o.name"/>
+                    </h2>
+             </xpath>
             <xpath expr="//table/thead" position="replace">
                 <thead style="display: table-row-group">
                     <tr>
@@ -115,8 +126,8 @@
                     </div>
             </xpath>
              <xpath expr="//div[hasclass('clearfix')]" position="after">
-                <div style="width:100%;border:2px solid black;margin-top:10px;">
-                    <p style="display:block;width:100%;text-align:center;font-weight:bolder;margin-top:5px;">CUENTA GAÑAFOTE SLU = IBAN ES38 2100 2697 9302 1015 4934</p>
+                <div style="width:100%;margin-top:10px;background-color:black;">
+                    <p style="display:block;width:100%;font-weight:bolder;margin-top:5px;color:#96c11e; margin-left;15px;">CUENTA GAÑAFOTE SLU = IBAN ES38 2100 2697 9302 1015 4934</p>
                 </div>
             </xpath>
         </field>
