@@ -11,5 +11,22 @@ class ResConfigSettings(models.TransientModel):
         related="company_id.sale_order_factory_template_id",
         string="Factory Default Template",
         readonly=False,
-        domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]")
-
+        domain="[('model', '=', 'sale.order')]",
+    )
+    so_factory_mail_template_id = fields.Many2one(
+        comodel_name='mail.template',
+        string='Factory Email Template',
+        domain="[('model', '=', 'sale.order')]",
+        config_parameter='sale.factory_mail_template',
+        help="Email sent to factory when the order is validated."
+    )
+    company_so_factory_email = fields.Char(
+        related="company_id.sale_order_factory_email",
+        string="Factory Default Mail",
+        readonly=False,
+    )
+    so_factory_mail_default = fields.Char(
+        string="Factory Default Mail",
+        config_parameter='sale.factory_mail_default',
+        help="Email sent to factory when the order is validated."
+    )

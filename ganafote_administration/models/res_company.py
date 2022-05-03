@@ -6,11 +6,13 @@ from odoo import fields, models
 
 class ResCompany(models.Model):
     _inherit = "res.company"
-    _check_company_auto = True
 
     sale_order_factory_template_id = fields.Many2one(
-        "sale.order.template",
-        string="Factory Sale Template",
-        domain="['|', ('company_id', '=', False), ('company_id', '=', id)]",
+        comodel_name='mail.template',
+        string='Factory Email Template',
+        domain="[('model', '=', 'sale.order')]",
         check_company=True,
+    )
+    sale_order_factory_email = fields.Char(
+        string="Factory Sale Email",
     )
