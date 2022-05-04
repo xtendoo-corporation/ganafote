@@ -59,7 +59,7 @@ class SaleOrder(models.Model):
                 print("*" * 80)
 
                 template_id.send_mail(
-                    order.id, force_send=False, raise_exception=False, email_values=None, notif_layout=False
+                    order.id, force_send=False, raise_exception=False, email_values=email_values, notif_layout=False
                 )
 
         return result
