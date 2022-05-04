@@ -1,0 +1,76 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ganafote_administration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-04 07:16+0000\n"
+"PO-Revision-Date: 2022-05-04 07:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ganafote_administration
+#: model_terms:ir.ui.view,arch_db:ganafote_administration.not_show_expected_revenue_in_crm_form
+msgid ""
+"<i class=\"fa fa-gear\" role=\"img\" title=\"Switch to automatic "
+"probability\" aria-label=\"Switch to automatic probability\"/>"
+msgstr ""
+
+#. module: ganafote_administration
+#: model_terms:ir.ui.view,arch_db:ganafote_administration.not_show_expected_revenue_in_crm_form
+msgid ""
+"<span class=\"oe_grey p-2\" invisible=\"1\" groups=\"crm.group_use_recurring_revenues\"> + </span>\n"
+"                                        <span class=\"oe_grey p-2\" invisible=\"1\" groups=\"!crm.group_use_recurring_revenues\"> at </span>"
+msgstr ""
+
+#. module: ganafote_administration
+#: model_terms:ir.ui.view,arch_db:ganafote_administration.not_show_expected_revenue_in_crm_form
+msgid "<span class=\"oe_grey p-2\"> at </span>"
+msgstr ""
+
+#. module: ganafote_administration
+#: model_terms:ir.ui.view,arch_db:ganafote_administration.not_show_expected_revenue_in_crm_form
+msgid "<span class=\"oe_grey\"> %</span>"
+msgstr ""
+
+#. module: ganafote_administration
+#: model:ir.model,name:ganafote_administration.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: ganafote_administration
+#: model:ir.model,name:ganafote_administration.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: ganafote_administration
+#: model_terms:ir.ui.view,arch_db:ganafote_administration.not_show_expected_revenue_in_crm_form
+msgid "E.g. Monthly"
+msgstr ""
+
+#. module: ganafote_administration
+#: model:ir.model.fields,help:ganafote_administration.field_res_config_settings__so_factory_mail_default
+#: model:ir.model.fields,help:ganafote_administration.field_res_config_settings__so_factory_mail_template_id
+msgid "Email sent to factory when the order is validated."
+msgstr ""
+
+#. module: ganafote_administration
+#: model:ir.model.fields,field_description:ganafote_administration.field_res_config_settings__so_factory_mail_default
+msgid "Factory Default Mail"
+msgstr "Email para fabricación"
+
+#. module: ganafote_administration
+#: model:ir.model.fields,field_description:ganafote_administration.field_res_config_settings__so_factory_mail_template_id
+msgid "Factory Email Template"
+msgstr "Plantilla email para fabricación"
+
+#. module: ganafote_administration
+#: model:ir.model,name:ganafote_administration.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
