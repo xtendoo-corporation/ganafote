@@ -58,8 +58,12 @@ class SaleOrder(models.Model):
                 print("email_values:", email_values)
                 print("*" * 80)
 
-                template_id.send_mail(
+                send_mail = template_id.send_mail(
                     order.id, force_send=False, raise_exception=True, email_values=email_values, notif_layout=False
                 )
+
+                print("*" * 80)
+                print("send_mail:", send_mail)
+                print("*" * 80)
 
         return result
