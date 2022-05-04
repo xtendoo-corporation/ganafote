@@ -4,15 +4,15 @@
         <field name="inherit_id" ref="sale.report_saleorder_document"/>
         <field name="arch" type="xml">
             <xpath expr="//h2[@class='mt16']" position="replace">
-                 <h2 class="mt16" style="background-color:black;color:#96c11e;">
+                  <h2 class="mt16" style="color:#96c11e;">
                     <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
-                        <span t-if="doc.state not in ['draft','sent']">Order # </span>
-                        <span t-if="doc.state in ['draft','sent']">Quotation # </span>
+                        <span style="background-color:black;" t-if="doc.state not in ['draft','sent']">Order # </span>
+                        <span style="background-color:black;" t-if="doc.state in ['draft','sent']">Quotation # </span>
                     </t>
                     <t t-if="env.context.get('proforma', False) or is_pro_forma">
-                        <span>Pro-Forma Invoice # </span>
+                        <span style="background-color:black;">Pro-Forma Invoice # </span>
                     </t>
-                    <span t-field="doc.name"/>
+                    <span style="background-color:black;" t-field="doc.name"/>
                 </h2>
             </xpath>
             <xpath expr="//table/thead" position="replace">

@@ -4,14 +4,17 @@
         <field name="inherit_id" ref="account.report_invoice_document"/>
         <field name="arch" type="xml">
              <xpath expr="//div[@class='page']/h2" position="replace">
-                    <h2 style="background-color:black;color:#96c11e;">
-                        <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">Invoice</span>
-                        <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
-                        <span t-if="o.move_type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
-                        <span t-if="o.move_type == 'out_refund'">Credit Note</span>
-                        <span t-if="o.move_type == 'in_refund'">Vendor Credit Note</span>
-                        <span t-if="o.move_type == 'in_invoice'">Vendor Bill</span>
-                        <span t-if="o.name != '/'" t-field="o.name"/>
+                    <h2 style="color:#96c11e;">
+                      <div style="background-color:black;display:inline">
+                        <span  t-if="o.move_type == 'out_invoice' and o.state == 'posted'">Invoice</span>
+                        <span style="background-color:black;" t-if="o.move_type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+                        <span style="background-color:black;" t-if="o.move_type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+                        <span style="background-color:black;" t-if="o.move_type == 'out_refund'">Credit Note</span>
+                        <span style="background-color:black;" t-if="o.move_type == 'in_refund'">Vendor Credit Note</span>
+                        <span style="background-color:black;" t-if="o.move_type == 'in_invoice'">Vendor Bill</span>
+                        <span style="background-color:black;" t-if="o.name != '/'" t-field="o.name"/>
+                      </div>
+
                     </h2>
              </xpath>
             <xpath expr="//table/thead" position="replace">
