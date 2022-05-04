@@ -9,30 +9,19 @@ class SaleOrder(models.Model):
 
     def action_confirm(self):
         result = super().action_confirm()
-
-        for order in self:
-            print("*"*80)
-            print("action_confirm:", order)
-            print("*"*80)
+        self._template_send_mail()
         return result
 
-    def _action_confirm(self):
-        result = super()._action_confirm()
-
-        template_id = int(self.env['ir.config_parameter'].sudo().get_param('sale.factory_mail_template'))
-        template_id = self.env['mail.template'].search([('id', '=', template_id)])
-
+    def _template_send_mail(self):
+        template_id = self.env['mail.template'].search(
+            [('id', '=', int(self.env['ir.config_parameter'].sudo().get_param('sale.factory_mail_template')))]
+        )
         if not template_id:
-            return result
+            return
 
         factory_mail = self.env['ir.config_parameter'].sudo().get_param('sale.factory_mail_default')
         if not factory_mail:
-            return result
-
-        print("*" * 80)
-        print("template_id:", template_id)
-        print("factory_mail:", factory_mail)
-        print("*" * 80)
+            return
 
         email_values = {
             'email_from': self.env.user.email_formatted,
@@ -46,24 +35,7 @@ class SaleOrder(models.Model):
         }
 
         for order in self:
-
-            print("*"*80)
-            print("order:", order)
-            print("order.sale_order_template_id:", order.sale_order_template_id)
-            print("*"*80)
-
-            if template_id:
-
-                print("*" * 80)
-                print("email_values:", email_values)
-                print("*" * 80)
-
-                send_mail = template_id.send_mail(
-                    order.id, force_send=False, raise_exception=True, email_values=email_values, notif_layout=False
-                )
-
-                print("*" * 80)
-                print("send_mail:", send_mail)
-                print("*" * 80)
-
-        return result
+            template_id.send_mail(
+                order.id, force_send=False, raise_exception=True, email_values=email_values, notif_layout=False
+            )
+        return
