@@ -4,12 +4,12 @@
          so users can freely customize/delete them -->
     <data noupdate="0">
         <!--Email template -->
-        <record id="ganafote_document_format.email_template_quotation_send" model="mail.template">
-            <field name="name">Pedido Enviado</field>
+        <record id="ganafote_document_format.email_template_quotation_to_factory" model="mail.template">
+            <field name="name">Pedido a fábrica</field>
             <field name="model_id" ref="sale.model_sale_order"/>
             <field name="email_from">{{ (object.user_id.email_formatted or user.email_formatted) }}</field>
             <field name="partner_to">{{ object.partner_id.id }}</field>
-            <field name="subject">{{ object.company_id.name }} {{ (object.get_portal_last_transaction().state == 'pending') and 'Pending Order' or 'Order' }} (Ref {{ object.name or 'n/a' }})</field>
+            <field name="subject">{{ object.company_id.name }}  (Ref {{ object.name or 'n/a' }}) Pedido Confirmado</field>
             <field name="body_html" type="html">
                  <div id="header">
                     <div id="header_fig" style="width:100%;">
@@ -19,17 +19,28 @@
                     </div>
                 </div>
                 <div id="content" style="clear:both;width:80%;margin:10px auto;font-size:1.5em;color:black;">
-                    <p>Hola  <span style="color:#83c200"><t t-out="object.partner_id.name" data-oe-t-inline="true" contenteditable="false"></t></span></p>
+                    <p>Buenas</p>
                     <p>
-                        Su pedido <span style="color:#83c200"><span><t t-out="object.name" data-oe-t-inline="true" contenteditable="false"></t></span> </span> acaba de salir de nuestras instalaciones y está en proceso de entrega. Esta se llevara a cabo según las indicaciones y direcciones dadas.
-                     </p>
-                     <p>
-                        Si deseas realizar un seguimiento del paquete a través de nuestro servicio de mensajería podrá consultar su situación con el <span style="color:#83c200">número de seguimiento correspondiente</span> haciendo clic en el siguiente botón</p>
+                        Adjunto pedido
+                        <span style="color:#83c200"><t t-out="object.name" data-oe-t-inline="true" contenteditable="false"></t></span>
+                         (nuevo/reposición) para
+                        <span style="color:#83c200"><t t-out="object.partner_id.name" data-oe-t-inline="true" contenteditable="false"></t></span>.
+                    </p>
+                    <p>
+                        <t t-if="object.note" data-oe-t-group="2" data-oe-t-group-active="true" data-oe-t-inline="true">
+                            <p><b>Nota:</b></p>
+                            <t t-out="object.note" data-oe-t-inline="true" contenteditable="false"/>
+                        </t>
+                        <t t-else="">
+                        </t>
+                    </p>
+                    <p>Un abrazo,</p>
                 </div>
                 <div id="footer">
                     <a href="https://ganafote.xtendoo.es">
                         <img class="img-fluid o_we_custom_image" src="https://i.postimg.cc/wjfyC6Rd/banner-abajo.png" alt=""/>
                     </a>
+
                 </div>
             </field>
             <field name="report_name">Quotation_${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}</field>

@@ -14,6 +14,7 @@
         "account",
     ],
     "data": [
+        "data/quotation_to_factory_email_template.xml",
         "data/quotation_confirmation_by_email_template.xml",
         "data/quotation_delivered_by_email_template.xml",
         "data/quotation_send_by_email_template.xml",
