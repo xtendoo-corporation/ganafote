@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-04 07:16+0000\n"
-"PO-Revision-Date: 2022-05-04 07:16+0000\n"
+"POT-Creation-Date: 2022-05-10 15:38+0000\n"
+"PO-Revision-Date: 2022-05-10 15:38+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -40,25 +40,25 @@ msgid "<span class=\"oe_grey\"> %</span>"
 msgstr ""
 
 #. module: ganafote_administration
-#: model:ir.model,name:ganafote_administration.model_res_company
-msgid "Companies"
-msgstr "Compañías"
-
-#. module: ganafote_administration
 #: model:ir.model,name:ganafote_administration.model_res_config_settings
 msgid "Config Settings"
 msgstr "Opciones de configuración"
 
 #. module: ganafote_administration
+#: model_terms:ir.ui.view,arch_db:ganafote_administration.view_order_form
+msgid "Create Invoice"
+msgstr "Crear Factura"
+
+#. module: ganafote_administration
 #: model_terms:ir.ui.view,arch_db:ganafote_administration.not_show_expected_revenue_in_crm_form
 msgid "E.g. Monthly"
-msgstr ""
+msgstr "P.e. Mensual"
 
 #. module: ganafote_administration
 #: model:ir.model.fields,help:ganafote_administration.field_res_config_settings__so_factory_mail_default
 #: model:ir.model.fields,help:ganafote_administration.field_res_config_settings__so_factory_mail_template_id
 msgid "Email sent to factory when the order is validated."
-msgstr ""
+msgstr "Correo electrónico enviado a fábrica cuando se valida el pedido."
 
 #. module: ganafote_administration
 #: model:ir.model.fields,field_description:ganafote_administration.field_res_config_settings__so_factory_mail_default
