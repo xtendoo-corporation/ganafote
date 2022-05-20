@@ -23,12 +23,12 @@
                     <p>
                         Su pedido ha sido tramitado con éxito a nuestra fábrica. Le mandaremos otro e-mail cuando el pedido salga de nuestras instalaciones. Recuerde que antes de la producción final, nuestro departamento de diseño le mandará una imagen de la muestra que deberá ser aceptada para poder continuar con la producción en caso de que el pedido sea nuevo. El pedido una vez tramitado no podrá ser modificado. La fecha estimada de entrega se indica a continuación.
                     </p>
-                    <table>
+                    <table style="width:100%;">
                         <tr>
-                            <td style="font-size:0.8em;display:block;width:45%;float:left;background-color:black;margin-right:5%;min-height:45px;max-height:45px;">
+                            <td style="font-size:0.8em;display:block;float:left;background-color:black;margin-right:5%;min-height:45px;max-height:45px;">
                                 <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white">ENTREGA ESTIMADA</p>
                             </td>
-                            <td style="font-size:0.8em;display:block;width:45%;float:left;margin-left:5%;background-color:#96C11E;min-height:45px;max-height:45px;">
+                            <td style="font-size:0.8em;display:block;float:left;margin-left:5%;background-color:#96C11E;min-height:45px;max-height:45px;">
                                            <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white;">
                             <span>
                                <t t-if="object.commitment_date" data-oe-t-group="2" data-oe-t-group-active="true" data-oe-t-inline="true">
@@ -42,18 +42,18 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="font-size:0.8em;display:block;width:45%;float:left;background-color:black;margin-right:5%;min-height:45px;max-height:45px;">
+                            <td style="font-size:0.8em;display:block;float:left;background-color:black;margin-right:5%;min-height:45px;max-height:45px;">
                                 <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white">DIRECCIÓN DE ENVÍO</p>
                             </td>
-                            <td style="margin-top:10px;font-size:0.8em;display:block;width:45%;float:left;margin-left:5%;background-color:#96C11E; min-height:45px;max-height:45px;">
+                            <td style="margin-top:10px;font-size:0.8em;display:block;float:left;margin-left:5%;background-color:#96C11E; min-height:45px;max-height:45px;">
                                 <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white;"><span><t  t-out="object.partner_shipping_id.street" data-oe-t-inline="true" contenteditable="false"></t></span></p>
                             </td>
                         </tr>
                         <tr>
-                            <td style="font-size:0.8em;margin-top:10px;display:block;width:45%;float:left;background-color:black;margin-right:5%;clear:both;min-height:45px;max-height:45px;">
+                            <td style="font-size:0.8em;margin-top:10px;display:block;float:left;background-color:black;margin-right:5%;clear:both;min-height:45px;max-height:45px;">
                                 <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white">IMPORTE TOTAL</p>
                             </td>
-                            <td style="margin-top:10px;font-size:0.8em;margin-top:10px;display:block;width:45%;float:left;margin-left:5%;background-color:#96C11E;min-height:45px;max-height:45px;">
+                            <td style="margin-top:10px;font-size:0.8em;margin-top:10px;display:block;float:left;margin-left:5%;background-color:#96C11E;min-height:45px;max-height:45px;">
                                 <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white"><span><t t-out="object.amount_total" data-oe-t-inline="true" contenteditable="false"></t> €</span></p>
                             </td>
                         </tr>
