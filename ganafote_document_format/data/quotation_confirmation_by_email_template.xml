@@ -45,10 +45,10 @@
                     <div style="margin-top:10px;font-size:0.8em;display:block;width:45%;float:left;margin-left:5%;background-color:#96C11E; min-height:45px;">
                         <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white;"><span><t  t-out="object.partner_shipping_id.street" data-oe-t-inline="true" contenteditable="false"></t></span></p>
                     </div>
-                    <div style="font-size:0.8em;margin-top:10px;display:block;width:45%;float:left;background-color:black;margin-right:5%;clear:both;min-height:45px;">
+                    <div style="font-size:0.8em;margin-top:10px;margin-top:10px;display:block;width:45%;float:left;background-color:black;margin-right:5%;clear:both;min-height:45px;">
                         <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white">IMPORTE TOTAL</p>
                     </div>
-                    <div style="margin-top:10px;font-size:0.8em;margin-top:10px;display:block;width:45%;float:left;margin-left:5%;background-color:#96C11E;min-height:45px;">
+                    <div style="margin-top:10px;font-size:0.8em;display:block;width:45%;float:left;margin-left:5%;background-color:#96C11E; min-height:45px;">
                         <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white"><span><t t-out="object.amount_total" data-oe-t-inline="true" contenteditable="false"></t> €</span></p>
                     </div>
                 </div>
