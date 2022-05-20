@@ -23,7 +23,7 @@
                     <p>
                         Su pedido ha sido tramitado con éxito a nuestra fábrica. Le mandaremos otro e-mail cuando el pedido salga de nuestras instalaciones. Recuerde que antes de la producción final, nuestro departamento de diseño le mandará una imagen de la muestra que deberá ser aceptada para poder continuar con la producción en caso de que el pedido sea nuevo. El pedido una vez tramitado no podrá ser modificado. La fecha estimada de entrega se indica a continuación.
                     </p>
-                    <table style="width:100%;">
+                    <table style="width:100%;border-collapse: separate; border-spacing: 10px 10px;">
                         <tr>
                             <td style="font-size:0.8em;background-color:black;min-height:45px;max-height:45px;">
                                 <p style="margin-top:9px;display:block;width:100%;text-align:center;color:white">ENTREGA ESTIMADA</p>
