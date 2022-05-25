@@ -6,11 +6,11 @@
             <xpath expr="//h2[@class='mt16']" position="replace">
                   <h2 class="mt16" style="color:#96c11e;">
                     <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
-                        <span style="background-color:black;" t-if="doc.state not in ['draft','sent']">Order # </span>
-                        <span style="background-color:black;" t-if="doc.state in ['draft','sent']">Quotation # </span>
+                        <span style="background-color:black;" t-if="doc.state not in ['draft','sent']">Pedido </span>
+                        <span style="background-color:black;" t-if="doc.state in ['draft','sent']">Presupuesto </span>
                     </t>
                     <t t-if="env.context.get('proforma', False) or is_pro_forma">
-                        <span style="background-color:black;">Pro-Forma Invoice # </span>
+                        <span style="background-color:black;">FActura pro-forma </span>
                     </t>
                     <span style="background-color:black;" t-field="doc.name"/>
                 </h2>

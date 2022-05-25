@@ -94,9 +94,11 @@
 
                 </div>
             </field>
-            <field name="report_name">Quotation_${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}</field>
+            <field name="report_name">{{ (object.name or '').replace('/','_') }}</field>
+             <field name="report_template" ref="action_report_saleorder"/>
             <field name="lang">${object.partner_id.lang}</field>
-            <field name="use_default_to" eval="True"/>
+            <field name="use_default_to" eval="False"/>
+            <field name="partner_to">{{ object.partner_id.id }}</field>
             <field name="auto_delete" eval="True"/>
         </record>
     </data>
