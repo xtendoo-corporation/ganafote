@@ -13,7 +13,7 @@
             <field name="body_html" type="html">
                  <div id="header">
                     <div id="header_fig" style="width:100%;">
-                        <a href="https://ganafote.xtendoo.es">
+                        <a href="https://erp.ganafote.com">
                             <img class="img-fluid o_we_custom_image" src="https://i.postimg.cc/sDb9Wgxg/cabecera.png" width="1096" height="453" style="border-style:none;box-sizing:border-box;display:inline-block;height:auto;max-width:100%;vertical-align:middle;"/>
                         </a>
                     </div>
@@ -40,7 +40,7 @@
                 </div>
             </field>
             <field name="report_name">{{ (object.name or '').replace('/','_') }}</field>
-            <field name="report_template" ref="action_report_saleorder"/>
+            <field name="report_template" ref="sale.action_report_saleorder"/>
             <field name="lang">${object.partner_id.lang}</field>
             <field name="use_default_to" eval="False"/>
             <field name="partner_to">{{ object.partner_id.id }}</field>

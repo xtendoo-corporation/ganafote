@@ -9,14 +9,8 @@
             <xpath expr="//div[@id='confirmation_email_setting']" position="after">
                 <div class="col-12 col-lg-6 o_setting_box" id="company_so_factory_template_setting">
                     <div class="o_setting_right_pane">
-<!--                        <label for="company_so_factory_template_id"/>-->
-<!--                        <field name="company_so_factory_template_id"/>-->
-
-                        <label for="so_factory_mail_template_id"/>
-                        <field name="so_factory_mail_template_id"/>
-
-                        <label for="so_factory_mail_default"/>
-                        <field name="so_factory_mail_default"/>
+                        <label for="company_so_factory_template_id"/>
+                        <field name="company_so_factory_template_id"/>
                     </div>
                 </div>
             </xpath>

@@ -1,34 +1,16 @@
 <odoo>
-
-    <record id="view_order_form" model="ir.ui.view">
-        <field name="name">sale.order.form</field>
-        <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_order_form"/>
-        <field name="arch" type="xml">
-            <header>
-                <button name="%(sale.action_view_sale_advance_payment_inv)d"
-                        string="Create Invoice"
-                        type="action"
-                        context="{'default_advance_payment_method': 'percentage'}"
-                        data-hotkey="q"
-                        attrs="{'invisible': [('state', 'in', ('sale', 'done', 'cancel'))]}"/>
-            </header>
-        </field>
-    </record>
-
-    <!-- mostrar margen -->
+<!--    mostrar margen-->
     <record id="show_sale_margin_in_tree_view" model="ir.ui.view">
         <field name="name">show.sale.margin.in.tree.view</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
         <field name="arch" type="xml">
-            <field name="amount_total" position="after">
+             <field name="amount_total" position="after">
                 <field name="margin" optional="hide"/>
             </field>
         </field>
     </record>
-    <!-- mostrar margen -->
-
+<!--    mostrar margen-->
 </odoo>
 
 

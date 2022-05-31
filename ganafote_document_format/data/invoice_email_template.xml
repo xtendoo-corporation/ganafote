@@ -4,12 +4,12 @@
          so users can freely customize/delete them -->
     <data noupdate="0">
         <!--Email template -->
-        <record id="ganafote_document_format.email_template_quotation_send" model="mail.template">
-            <field name="name">Pedido Enviado</field>
-            <field name="model_id" ref="sale.model_sale_order"/>
+        <record id="ganafote_document_format.invoice_email_template" model="mail.template">
+            <field name="name">Factura</field>
+            <field name="model_id" ref="sale.model_account_move"/>
             <field name="email_from">{{ (object.user_id.email_formatted or user.email_formatted) }}</field>
             <field name="partner_to">{{ object.partner_id.id }}</field>
-            <field name="subject">{{ object.company_id.name }} {{ (object.get_portal_last_transaction().state == 'pending') and 'Pending Order' or 'Order' }} (Ref {{ object.name or 'n/a' }})</field>
+            <field name="subject">{{ object.company_id.name }} Factura (Ref {{ object.name or 'n/a' }})</field>
             <field name="body_html" type="html">
                  <div id="header">
                     <div id="header_fig" style="width:100%;">
@@ -21,10 +21,11 @@
                 <div id="content" style="clear:both;width:80%;margin:10px auto;font-size:1.5em;color:black;">
                     <p>Hola  <span style="color:#83c200"><t t-out="object.partner_id.name" data-oe-t-inline="true" contenteditable="false"></t></span></p>
                     <p>
-                        Su pedido <span style="color:#83c200"><span><t t-out="object.name" data-oe-t-inline="true" contenteditable="false"></t></span> </span> acaba de salir de nuestras instalaciones y está en proceso de entrega. Esta se llevara a cabo según las indicaciones y direcciones dadas.
+                        Desde el departamento comercial de GAÑAFOTE SLU le hacemos llegar la Factura <span style="color:#83c200"><span><t t-out="object.name" data-oe-t-inline="true" contenteditable="false"></t></span></span>.
                      </p>
-                     <p>
-                        Si deseas realizar un seguimiento del paquete a través de nuestro servicio de mensajería podrá consultar su situación con el <span style="color:#83c200">número de seguimiento correspondiente</span> haciendo clic en el siguiente botón</p>
+                    <p>
+                        Gracias por su atención.
+                    </p>
                 </div>
                 <div id="footer">
                     <a href="https://erp.ganafote.com">
@@ -33,7 +34,7 @@
                 </div>
             </field>
             <field name="report_name">{{ (object.name or '').replace('/','_') }}</field>
-            <field name="report_template" ref="sale.action_report_saleorder"/>
+            <field name="report_template" ref="account.account_invoices"/>
             <field name="lang">${object.partner_id.lang}</field>
             <field name="use_default_to" eval="False"/>
             <field name="partner_to">{{ object.partner_id.id }}</field>

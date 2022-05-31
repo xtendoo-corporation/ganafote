@@ -9,24 +9,23 @@ class SaleOrder(models.Model):
 
     def action_confirm(self):
         result = super().action_confirm()
-        self._template_send_mail()
+        for order in self:
+            print("*"*80)
+            print("action_confirm:", order)
+            print("*"*80)
         return result
 
-    def _template_send_mail(self):
-        template_id = self.env['mail.template'].search(
-            [('id', '=', int(self.env['ir.config_parameter'].sudo().get_param('sale.factory_mail_template')))]
-        )
-        if not template_id:
-            return
+    def _action_confirm(self):
+        result = super()._action_confirm()
 
-        factory_mail = self.env['ir.config_parameter'].sudo().get_param('sale.factory_mail_default')
-        if not factory_mail:
-            return
+        print("*" * 80)
+        print("_action_confirm:")
+        print("*" * 80)
 
         email_values = {
             'email_from': self.env.user.email_formatted,
             'author_id': self.env.user.partner_id.id,
-            'email_to': factory_mail,
+            'email_to': 'manuelcalerosolis@gmail.com',
             'email_cc': False,
             'auto_delete': True,
             'recipient_ids': [],
@@ -35,7 +34,20 @@ class SaleOrder(models.Model):
         }
 
         for order in self:
-            template_id.send_mail(
-                order.id, force_send=False, raise_exception=True, email_values=email_values, notif_layout=False
-            )
-        return
+
+            print("*"*80)
+            print("order:", order)
+            print("order.sale_order_template_id:", order.sale_order_template_id)
+            print("*"*80)
+
+            if order.sale_order_template_id and order.sale_order_template_id.mail_template_id:
+
+                print("*" * 80)
+                print("email_values:", email_values)
+                print("*" * 80)
+
+                order.sale_order_template_id.mail_template_id.send_mail(
+                    order.id, force_send=False, raise_exception=False, email_values=None, notif_layout=False
+                )
+
+        return result
