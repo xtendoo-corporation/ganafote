@@ -21,7 +21,7 @@
                 <div id="content" style="clear:both;width:80%;margin:10px auto;font-size:1.5em;color:black;">
                     <p>Hola  <span style="color:#83c200"><t t-out="object.partner_id.name" data-oe-t-inline="true" contenteditable="false"></t></span></p>
                     <p>
-                        Desde el departamento comercial de GAÑAFOTE SLU le hacemos llegar la Factura <span style="color:#83c200"><span><t t-out="object.name" data-oe-t-inline="true" contenteditable="false"></t></span></span>.
+                        Desde el departamento de contabilidad de GAÑAFOTE SLU le hacemos llegar la Factura <span style="color:#83c200"><span><t t-out="object.name" data-oe-t-inline="true" contenteditable="false"></t></span></span>.
                      </p>
                     <p>
                         Gracias por su atención.
