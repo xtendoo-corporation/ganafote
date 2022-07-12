@@ -13,7 +13,8 @@
         "base",
         "sale_margin",
         "sale",
-        "pragmatic_odoo_whatsapp_integration"
+        "pragmatic_odoo_whatsapp_integration",
+        "account_move_template",
     ],
     "data": [
         "views/res_config_settings_views.xml",
