@@ -13,3 +13,9 @@ class ResConfigSettings(models.TransientModel):
         readonly=False,
         domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]")
 
+    company_am_factory_template_id = fields.Many2one(
+        related="company_id.account_move_template_id",
+        string="Factory Default Template",
+        readonly=False,
+        domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]")
+

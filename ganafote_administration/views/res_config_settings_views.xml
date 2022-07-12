@@ -16,5 +16,27 @@
             </xpath>
         </field>
     </record>
+     <record id="res_config_settings_view_form_account_move" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.account.move</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+              <xpath expr="//div[hasclass('app_settings_block')][@data-key='account']/div[2]" position="after">
+                    <h2>Email de confirmación</h2>
+                     <div class="col-12 col-lg-6 o_setting_box" id="confirmation_email_setting" attrs="{'invisible': [('portal_confirmation_pay', '=', False) , ('portal_confirmation_sign', '=', False)]}" groups="base.group_no_one">
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Confirmation Email</span>
+                                <div class="text-muted">
+                                    Automatic email sent after the customer has signed or paid online
+                                </div>
+                                <div class="row mt16">
+                                    <label for="company_am_factory_template_id" class="col-lg-4 o_light_label"/>
+                                    <field name="company_am_factory_template_id" class="oe_inline"/>
+                                </div>
+                            </div>
+                        </div>
+              </xpath>
+        </field>
+    </record>
 
 </odoo>
