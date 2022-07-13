@@ -8,11 +8,8 @@
     "summary": "Sale order line print html",
     "version": "15.0.1.0.0",
     "category": "Extra-tools",
-    "website": "https://xtendoo.es",
-    "depends": [
-        "sale",
-        "website_sale"
-    ],
+    "website": "https://github.com/OCA/edi",
+    "depends": ["sale", "website_sale"],
     "data": [
         "views/sale_order_views.xml",
     ],

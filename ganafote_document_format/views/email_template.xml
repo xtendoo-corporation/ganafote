@@ -1,7 +1,7 @@
 <odoo>
     <record id="email_template_whitout_hf" model="ir.ui.view">
         <field name="name">email.template.whitout.hf</field>
-        <field name="inherit_id" ref="mail.mail_notification_paynow"/>
+        <field name="inherit_id" ref="mail.mail_notification_paynow" />
         <field name="arch" type="xml">
            <xpath expr="//t/table/tr/td/table/tbody/tr/td/table" position="replace">
             </xpath>
@@ -11,7 +11,10 @@
             </xpath>
             <xpath expr="//t/table/tr[2]" position="replace">
               <tr>
-                  <td align="center" style="margin-top:-10px;min-width: 590px; padding: 8px; font-size:11px;">
+                  <td
+            align="center"
+            style="margin-top:-10px;min-width: 590px; padding: 8px; font-size:11px;"
+          >
                   </td>
               </tr>
             </xpath>

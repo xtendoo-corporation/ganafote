@@ -1,18 +1,24 @@
 <odoo>
     <record id="ganafote_report_saleorder_document" model="ir.ui.view">
         <field name="name">ganafote.report.saleorder.document</field>
-        <field name="inherit_id" ref="sale.report_saleorder_document"/>
+        <field name="inherit_id" ref="sale.report_saleorder_document" />
         <field name="arch" type="xml">
             <xpath expr="//h2[@class='mt16']" position="replace">
                   <h2 class="mt16" style="color:#96c11e;">
                     <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
-                        <span style="background-color:black;" t-if="doc.state not in ['draft','sent']">Pedido </span>
-                        <span style="background-color:black;" t-if="doc.state in ['draft','sent']">Presupuesto </span>
+                        <span
+              style="background-color:black;"
+              t-if="doc.state not in ['draft','sent']"
+            >Pedido </span>
+                        <span
+              style="background-color:black;"
+              t-if="doc.state in ['draft','sent']"
+            >Presupuesto </span>
                     </t>
                     <t t-if="env.context.get('proforma', False) or is_pro_forma">
                         <span style="background-color:black;">FActura pro-forma </span>
                     </t>
-                    <span style="background-color:black;" t-field="doc.name"/>
+                    <span style="background-color:black;" t-field="doc.name" />
                 </h2>
             </xpath>
             <xpath expr="//table/thead" position="replace">
@@ -21,13 +27,22 @@
                         <th name="th_description" class="text-left">Descripción</th>
                         <th name="th_quantity" class="text-right">Cantidad</th>
                         <th name="th_priceunit" class="text-right">Precio/U</th>
-                        <th name="th_discount" t-if="display_discount" class="text-right" groups="product.group_discount_per_so_line">
+                        <th
+              name="th_discount"
+              t-if="display_discount"
+              class="text-right"
+              groups="product.group_discount_per_so_line"
+            >
                             <span>Desc.%</span>
                         </th>
                        <!-- <th name="th_taxes" class="text-right">Taxes</th>-->
                         <th name="th_subtotal" class="text-right">
-                            <span groups="account.group_show_line_subtotals_tax_excluded">Total</span>
-                            <span groups="account.group_show_line_subtotals_tax_included">Total</span>
+                            <span
+                groups="account.group_show_line_subtotals_tax_excluded"
+              >Total</span>
+                            <span
+                groups="account.group_show_line_subtotals_tax_included"
+              >Total</span>
                         </th>
                     </tr>
                 </thead>
@@ -35,50 +50,75 @@
              <xpath expr="//table/tbody" position="replace">
                   <tbody class="sale_tbody">
 
-                    <t t-set="current_subtotal" t-value="0"/>
+                    <t t-set="current_subtotal" t-value="0" />
 
                     <t t-foreach="doc.order_line" t-as="line">
 
-                        <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
-                        <t t-set="current_subtotal" t-value="current_subtotal + line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+                        <t
+              t-set="current_subtotal"
+              t-value="current_subtotal + line.price_subtotal"
+              groups="account.group_show_line_subtotals_tax_excluded"
+            />
+                        <t
+              t-set="current_subtotal"
+              t-value="current_subtotal + line.price_total"
+              groups="account.group_show_line_subtotals_tax_included"
+            />
 
-                        <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                        <tr
+              t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''"
+            >
                             <t t-if="not line.display_type">
-                                <td name="td_name"><span t-field="line.name"/></td>
+                                <td name="td_name"><span t-field="line.name" /></td>
                                 <td name="td_quantity" class="text-right">
-                                    <span t-field="line.product_uom_qty"/>
-                                    <span t-field="line.product_uom"/>
+                                    <span t-field="line.product_uom_qty" />
+                                    <span t-field="line.product_uom" />
                                 </td>
                                 <td name="td_priceunit" class="text-right">
-                                    <span t-field="line.price_unit"/>
+                                    <span t-field="line.price_unit" />
                                 </td>
-                                <td t-if="display_discount" class="text-right" groups="product.group_discount_per_so_line">
-                                    <span t-field="line.discount"/>
+                                <td
+                  t-if="display_discount"
+                  class="text-right"
+                  groups="product.group_discount_per_so_line"
+                >
+                                    <span t-field="line.discount" />
                                 </td>
                                 <td name="td_subtotal" class="text-right o_price_total">
-                                    <span t-field="line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
-                                    <span t-field="line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+                                    <span
+                    t-field="line.price_subtotal"
+                    groups="account.group_show_line_subtotals_tax_excluded"
+                  />
+                                    <span
+                    t-field="line.price_total"
+                    groups="account.group_show_line_subtotals_tax_included"
+                  />
                                 </td>
                             </t>
                             <t t-if="line.display_type == 'line_section'">
                                 <td name="td_section_line" colspan="99">
-                                    <span t-field="line.name"/>
+                                    <span t-field="line.name" />
                                 </td>
-                                <t t-set="current_section" t-value="line"/>
-                                <t t-set="current_subtotal" t-value="0"/>
+                                <t t-set="current_section" t-value="line" />
+                                <t t-set="current_subtotal" t-value="0" />
                             </t>
                             <t t-if="line.display_type == 'line_note'">
                                 <td name="td_note_line" colspan="99">
-                                    <span t-field="line.name"/>
+                                    <span t-field="line.name" />
                                 </td>
                             </t>
                         </tr>
 
-                        <t t-if="current_section and (line_last or doc.order_line[line_index+1].display_type == 'line_section')">
+                        <t
+              t-if="current_section and (line_last or doc.order_line[line_index+1].display_type == 'line_section')"
+            >
                             <tr class="is-subtotal text-right">
                                 <td name="td_section_subtotal" colspan="99">
                                     <strong class="mr16">Subtotal</strong>
-                                    <span t-esc="current_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
+                                    <span
+                    t-esc="current_subtotal"
+                    t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"
+                  />
                                 </td>
                             </tr>
                         </t>
@@ -86,13 +126,22 @@
                 </tbody>
               </xpath>
             <xpath expr="//div[hasclass('clearfix')]" position="replace">
-                <div class="clearfix" name="so_total_summary" style="width:200%!important;margin-left:-100%;">
+                <div
+          class="clearfix"
+          name="so_total_summary"
+          style="width:200%!important;margin-left:-100%;"
+        >
                 <div id="total" class="row" name="total">
-                    <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
+                    <div
+              t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto"
+            >
                         <table class="table table-sm">
                             <!-- Tax totals -->
-                            <t t-set="tax_totals" t-value="json.loads(doc.tax_totals_json)"/>
-                            <t t-call="account.document_tax_totals"/>
+                            <t
+                  t-set="tax_totals"
+                  t-value="json.loads(doc.tax_totals_json)"
+                />
+                            <t t-call="account.document_tax_totals" />
                         </table>
                     </div>
                 </div>
@@ -108,14 +157,20 @@
                             <p style="font-weight:bolder">Observaciones</p>
                         </div>
                         <p>Diseños gratuitos.</p>
-                        <p style="display:block;width:100%;">Los diseños son gratuitos siempre que lleve un pedido solicitado y aceptado por el cliente.Incluidos nombre, número, logos de patrocinadores, eslogan, leyendas...Todo cerrado en prendas subli. Todas las prendas vienen individualmente plastificadas y planchadas. Plazos de entrega = una vez ingresado el 50%, pedido cerrado y diseños aceptados, necesitamos 3-4 semanas.</p>
+                        <p
+                    style="display:block;width:100%;"
+                  >Los diseños son gratuitos siempre que lleve un pedido solicitado y aceptado por el cliente.Incluidos nombre, número, logos de patrocinadores, eslogan, leyendas...Todo cerrado en prendas subli. Todas las prendas vienen individualmente plastificadas y planchadas. Plazos de entrega = una vez ingresado el 50%, pedido cerrado y diseños aceptados, necesitamos 3-4 semanas.</p>
                     </div>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <div style="width:100%;margin-top:10px;background-color:black;">
-                                    <p style="display:block;width:100%;font-weight:bolder;margin-top:5px;color:#96c11e;margin-left:15px;">CUENTA GAÑAFOTE SLU = IBAN ES38 2100 2697 9302 1015 4934</p>
+                                <div
+                  style="width:100%;margin-top:10px;background-color:black;"
+                >
+                                    <p
+                    style="display:block;width:100%;font-weight:bolder;margin-top:5px;color:#96c11e;margin-left:15px;"
+                  >CUENTA GAÑAFOTE SLU = IBAN ES38 2100 2697 9302 1015 4934</p>
                                 </div>
                             </td>
                         </tr>
@@ -124,18 +179,32 @@
                                 <div style="width:100%;display:block">
                     <div style="width:100%;margin-top:10px;">
                         <div>
-                            <p style="display:block;width:100%;font-weight:bolder;;">Condiciones tras la aceptación del presupuesto</p>
+                            <p
+                        style="display:block;width:100%;font-weight:bolder;;"
+                      >Condiciones tras la aceptación del presupuesto</p>
                         </div>
-                        <p style="display:block;width:100%;margin-left:5px;">1. El cliente debe saber que las maquetaciones en 3D son una aproximación al diseño real</p>
-                        <p style="display:block;width:100%;margin-left:5px;">2. Los colores pueden tener alguna variación respecto al boceto digital. El cliente debe elegir los
+                        <p
+                      style="display:block;width:100%;margin-left:5px;"
+                    >1. El cliente debe saber que las maquetaciones en 3D son una aproximación al diseño real</p>
+                        <p
+                      style="display:block;width:100%;margin-left:5px;"
+                    >2. Los colores pueden tener alguna variación respecto al boceto digital. El cliente debe elegir los
 pantones de color para los productos presupuestados.</p>
-                        <p style="display:block;width:100%;margin-left:5px;">3. El cliente acepta el diseño 3D sabiendo que no podrá sufrir variaciones tras la aceptación. Una
+                        <p
+                      style="display:block;width:100%;margin-left:5px;"
+                    >3. El cliente acepta el diseño 3D sabiendo que no podrá sufrir variaciones tras la aceptación. Una
 vez el pedido lanzado a fabrica no podrá verse modificado.</p>
-                        <p style="display:block;width:100%;margin-left:5px;">4. El cliente revisará y dará visto bueno al pedido enviado por el área de administración.
+                        <p
+                      style="display:block;width:100%;margin-left:5px;"
+                    >4. El cliente revisará y dará visto bueno al pedido enviado por el área de administración.
 Cualquier error del mismo, tras la revisión, será responsabilidad del cliente.</p>
-                        <p style="display:block;width:100%;margin-left:5px;">5. Una vez aceptado el diseño, GAÑAFOTE SLU no se hará responsable de los posibles errores
+                        <p
+                      style="display:block;width:100%;margin-left:5px;"
+                    >5. Una vez aceptado el diseño, GAÑAFOTE SLU no se hará responsable de los posibles errores
 tanto de ortografía, textos, formas, color, tamaño, talla, logos, etc.</p>
-                        <p style="display:block;width:100%;margin-left:5px;">6. Los tiempos de entregas será de 3 a 4 semanas en "temporada normal". Los tiempos de entregas
+                        <p
+                      style="display:block;width:100%;margin-left:5px;"
+                    >6. Los tiempos de entregas será de 3 a 4 semanas en "temporada normal". Los tiempos de entregas
 puede verse incrementado en 1 o 2 semanas en "temporada alta".</p>
 
                     </div>

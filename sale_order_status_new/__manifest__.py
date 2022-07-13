@@ -8,10 +8,8 @@
     "summary": "Sale order status new",
     "version": "15.0.1.0.0",
     "category": "Extra-tools",
-    "website": "https://xtendoo.es",
-    "depends": [
-        "sale"
-    ],
+    "website": "https://github.com/OCA/edi",
+    "depends": ["sale"],
     "data": [
         "views/sale_order_views.xml",
     ],

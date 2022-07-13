@@ -8,7 +8,7 @@
     "summary": "Ganafote Administration",
     "version": "15.0.1.0.0",
     "category": "Extra-tools",
-    "website": "https://xtendoo.es",
+    "website": "https://github.com/OCA/edi",
     "depends": [
         "base",
         "sale_margin",
@@ -21,7 +21,7 @@
         "views/res_partner_views.xml",
         "views/sale_order_views.xml",
         "views/account_move_views.xml",
-        #"views/crm_views.xml",
+        # "views/crm_views.xml",
     ],
     "license": "LGPL-3",
     "installable": True,

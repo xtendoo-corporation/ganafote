@@ -5,7 +5,7 @@
     "description": """Formatos de documentos para Gañafote""",
     "author": "Daniel Dominguez",
     "company": "Xtendoo",
-    "website": "http://xtendoo.es",
+    "website": "https://github.com/OCA/edi",
     "category": "Extra Tools",
     "license": "AGPL-3",
     "depends": [
