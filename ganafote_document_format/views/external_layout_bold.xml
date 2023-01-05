@@ -74,7 +74,12 @@
               <xpath expr="//div[hasclass('col-4')][1]" position="replace">
               </xpath>
              <xpath expr="//div[hasclass('col-1')]" position="replace">
-                 <div class="col-11" />
+                 <div class="col-11" >
+                      <img
+                    style="width:100%;margin-top:-25px;"
+                    src="/ganafote_document_format/static/src/img/premios_factura.png"
+                />
+                 </div>
                   <div class="col-1">
                     <ul
             t-if="report_type == 'pdf'"

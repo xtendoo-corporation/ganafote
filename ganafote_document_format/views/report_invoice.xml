@@ -311,12 +311,12 @@
                 </div>
 
             </xpath>
-             <xpath expr="//p[@name='incoterm']" position="after">
-                <img
-                    style="width:100%;"
-                    src="/ganafote_document_format/static/src/img/premios_factura.png"
-                />
-            </xpath>
+<!--             <xpath expr="//p[@name='incoterm']" position="after">-->
+<!--                <img-->
+<!--                    style="width:100%;"-->
+<!--                    src="/ganafote_document_format/static/src/img/premios_factura.png"-->
+<!--                />-->
+<!--            </xpath>-->
         </field>
     </record>
 </odoo>
