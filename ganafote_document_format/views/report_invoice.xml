@@ -299,13 +299,13 @@
                     <t t-if="o.company_id.id == 1">
                                         <p
                                             style="display:block;width:100%;font-weight:bolder;margin-top:5px;color:#96c11e;margin-left:15px;"
-                                        >CUENTA GAÑAFOTE SLU = IBAN ES38 2100 2697 9302 1015 4934
+                                        >CUENTA GAÑAFOTE SLU = IBAN ES74 0049 0012 7123 1219 3764
                                         </p>
                                     </t>
                                     <t t-if="o.company_id.id == 2">
                                         <p
                                             style="display:block;width:100%;font-weight:bolder;margin-top:5px;color:#006eb7;margin-left:15px;"
-                                        >CUENTA GAÑAFOTE Sports Events = IBAN ES95 2100 2697 9802 1026 1236
+                                        >CUENTA GAÑAFOTE Sports Events = IBAN ES34 0049 0012 7321 1219 3772
                                         </p>
                                     </t>
                 </div>
