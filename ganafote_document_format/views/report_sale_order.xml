@@ -203,19 +203,17 @@
                         </t>
                         <tr>
                             <td>
-                                <div
-                                    style="width:100%;margin-top:10px;"
-                                >
+                                 <div style="width:100%;margin-top:10px;margin-left:-15px;padding-left:2px;">
                                     <t t-if="doc.company_id.id == 1">
                                         <p
-                                            style="display:block;width:100%;font-weight:bolder;margin-top:5px;color:#96c11e;margin-left:15px;"
+                                            style="border:2px solid #96c11e;display:block;width:100%;font-weight:bolder;margin-top:5px;color:#96c11e;margin-left:15px;"
                                         >CUENTA GAÑAFOTE SLU = IBAN ES74 0049 0012 7123 1219 3764
                                         </p>
                                     </t>
                                     <t t-if="doc.company_id.id == 2">
                                         <p
-                                            style="display:block;width:100%;font-weight:bolder;margin-top:5px;color:#006eb7;margin-left:15px;"
-                                        >CUENTA GAÑAFOTE Sports Events = IBAN ES34 0049 0012 7321 1219 3772
+                                            style="border:2px solid #006eb7;display:block;width:100%;font-weight:bolder;margin-top:5px;color:#006eb7;margin-left:15px;"
+                                        >CUENTA GAÑAFOTE SPORTS EVENTS = IBAN ES34 0049 0012 7321 1219 3772
                                         </p>
                                     </t>
 
