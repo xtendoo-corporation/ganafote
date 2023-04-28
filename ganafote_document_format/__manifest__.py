@@ -3,7 +3,7 @@
     "summary": """Formatos de documentos para Gañafote""",
     "version": "16.0.1.0.0",
     "description": """Formatos de documentos para Gañafote""",
-    "author": "Daniel Dominguez, Camilo",
+    "author": "Daniel Dominguez, Camilo Prado",
     "company": "Xtendoo",
     "website": "https://github.com/OCA/edi",
     "category": "Extra Tools",
