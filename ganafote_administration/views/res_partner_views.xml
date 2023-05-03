@@ -14,7 +14,7 @@
         </field>
     </record>
 
-     <record id="res_partner_mobile_required" model="ir.ui.view">
+ <!--    <record id="res_partner_mobile_required" model="ir.ui.view">
         <field name="name">res.partner.mobile.required</field>
         <field name="model">res.partner</field>
         <field
@@ -26,6 +26,6 @@
                 <attribute name="required">1</attribute>
             </xpath>
         </field>
-    </record>
+    </record> -->
 <!--    FIN Email y movil requeridos-->
 </odoo>

@@ -13,7 +13,6 @@
         "base",
         "sale_margin",
         "sale",
-        "pragmatic_odoo_whatsapp_integration",
         "account_move_template",
     ],
     "data": [
