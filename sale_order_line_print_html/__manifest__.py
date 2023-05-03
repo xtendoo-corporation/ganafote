@@ -4,9 +4,15 @@
 {
     "name": "Sale order line print html",
     "author": "DDL-Xtendoo",
+<<<<<<< HEAD
     "company": "Xtendoo, Camilo",
     "summary": "Sale order line print html",
     "version": "16.0.1.0.0",
+=======
+    "company": "Xtendoo",
+    "summary": "Sale order line print html",
+    "version": "15.0.1.0.0",
+>>>>>>> 365abd87e9efac0223152faaaf4d1149b386d5be
     "category": "Extra-tools",
     "website": "https://github.com/OCA/edi",
     "depends": ["sale", "website_sale"],
