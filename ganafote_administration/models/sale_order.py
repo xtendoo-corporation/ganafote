@@ -9,7 +9,6 @@ class SaleOrder(models.Model):
 
     def action_confirm(self):
         result = super().action_confirm()
-        for order in self:
         return result
 
     def _action_confirm(self):
