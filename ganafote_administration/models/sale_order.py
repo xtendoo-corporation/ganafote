@@ -10,9 +10,6 @@ class SaleOrder(models.Model):
     def action_confirm(self):
         result = super().action_confirm()
         for order in self:
-            print("*" * 80)
-            print("action_confirm:", order)
-            print("*" * 80)
         return result
 
     def _action_confirm(self):
