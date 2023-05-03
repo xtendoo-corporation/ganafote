@@ -1,15 +1,9 @@
 {
     "name": "Document Format Gañafote",
     "summary": """Formatos de documentos para Gañafote""",
-<<<<<<< HEAD
     "version": "16.0.1.0.0",
     "description": """Formatos de documentos para Gañafote""",
-    "author": "Daniel Dominguez, Camilo Prado",
-=======
-    "version": "15.0.1.0.0",
-    "description": """Formatos de documentos para Gañafote""",
     "author": "Daniel Dominguez",
->>>>>>> 365abd87e9efac0223152faaaf4d1149b386d5be
     "company": "Xtendoo",
     "website": "https://github.com/OCA/edi",
     "category": "Extra Tools",

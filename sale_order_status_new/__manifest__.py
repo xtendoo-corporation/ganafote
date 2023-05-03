@@ -4,15 +4,9 @@
 {
     "name": "Sale order status new",
     "author": "DDL-Xtendoo",
-<<<<<<< HEAD
-    "company": "Xtendoo, Camilo",
-    "summary": "Sale order status new",
-    "version": "16.0.1.0.0",
-=======
     "company": "Xtendoo",
     "summary": "Sale order status new",
-    "version": "15.0.1.0.0",
->>>>>>> 365abd87e9efac0223152faaaf4d1149b386d5be
+    "version": "16.0.1.0.0",
     "category": "Extra-tools",
     "website": "https://github.com/OCA/edi",
     "depends": ["sale"],
