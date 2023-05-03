@@ -13,7 +13,6 @@
         "base",
         "sale_margin",
         "sale",
-        "account_move_template",
     ],
     "data": [
         "views/res_config_settings_views.xml",
