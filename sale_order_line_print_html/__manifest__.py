@@ -3,12 +3,12 @@
 
 {
     "name": "Sale order line print html",
-    "author": "DDL-Xtendoo",
+    "author": "DDL-Xtendoo, Odoo Community Association (OCA)",
     "company": "Xtendoo",
     "summary": "Sale order line print html",
     "version": "16.0.1.0.0",
     "category": "Extra-tools",
-    "website": "https://github.com/OCA/edi",
+    "website": "https://github.com/OCA/contract",
     "depends": ["sale", "website_sale"],
     "data": [
         "views/sale_order_views.xml",
