@@ -37,5 +37,4 @@ class AccountMove(models.Model):
                     force_send=False,
                     raise_exception=False,
                     email_values=False,
-                    notif_layout=False,
                 )
