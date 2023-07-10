@@ -11,6 +11,7 @@
         "sale",
         "mail",
         "account",
+        "loyalty",
     ],
     "data": [
         "data/quotation_to_factory_email_template.xml",
@@ -19,6 +20,7 @@
         "data/quotation_delivered_by_email_template.xml",
         "data/quotation_send_by_email_template.xml",
         "data/invoice_email_template.xml",
+        "data/loyalty_card_email_template.xml",
         "data/invoice_confirmation_email_template.xml",
         "views/external_layout_bold.xml",
         "views/report_sale_order.xml",
