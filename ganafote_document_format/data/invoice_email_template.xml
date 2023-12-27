@@ -93,23 +93,36 @@
             <field name="partner_to">{{ object.partner_id.id }}</field>
             <field name="subject">{{ object.company_id.name }} Factura (Ref {{ object.name or 'n/a' }})</field>
             <field name="body_html" type="html">
-                <div id="header">
-                    <div id="header_fig" style="width:100%;">
-                        <a href="https://ganafote.com">
-                            <img src="/ganafote_document_format/static/src/img/events_logo.png"
-                                 width="1096"
-                                 height="453"
-                                 style="border-style:none;box-sizing:border-box;display:inline-block;height:auto;max-width:100%;vertical-align:middle;"
-                            />
-                        </a>
+                <div id="header" style="margin-bottom: 150px">
+                    <div id="background-image" style="position: absolute; top: 0; left: 0;">
+                        <img src="/ganafote_document_format/static/src/img/mancha_esquina_arriba.png"
+                             width="300"
+                             style="border-style: none; box-sizing: border-box; display: block; height: auto; max-width: 100%; width: 50%;"
+                        />
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <div id="header_fig" style="width: 50%;">
+                            <a href="https://ganafote.com">
+                                <img src="/ganafote_document_format/static/src/img/events_logo.png"
+                                     width="120"
+                                     style="border-style: none; box-sizing: border-box; display: inline-block; height: auto; margin-left: 90px; max-width: 100%; vertical-align: middle;"
+                                />
+                            </a>
+                        </div>
+                        <div id="header_fig" style="width: 50%;">
+                            <p style="text-align: right; margin-right: 90px; font-size: 1.5em; color: black;">
+                                Factura Nº
+                                <t t-out="object.name" data-oe-t-inline="true" contenteditable="false"/>
+                            </p>
+                        </div>
                     </div>
                 </div>
+
+
                 <div
                     id="content"
                     style="clear:both;width:80%;margin:10px auto;font-size:1.5em;color:black;"
                 >
-
-
                     <h1>
                         <p>!HOLA!
                             <span style="color:#83c200">
@@ -118,6 +131,7 @@
                                     data-oe-t-inline="true"
                                     contenteditable="false"
                                 />
+                                ,
                             </span>
                         </p>
                     </h1>
