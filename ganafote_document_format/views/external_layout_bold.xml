@@ -50,15 +50,6 @@
                                 </li>
                                 <t t-if="not is_purchase">
                                 </t>
-                                <t t-else="">
-                                    <li>
-                                        <b>Descarga: C/ Olivo,7</b>
-                                    </li>
-                                    <li>
-                                        <b>21700-La Palma del Condado
-                                            ( HUELVA )</b>
-                                    </li>
-                                </t>
                             </ul>
                         </div>
                     </div>

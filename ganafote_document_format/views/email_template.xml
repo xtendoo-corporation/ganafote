@@ -1,16 +1,21 @@
+<?xml version="1.0"?>
 <odoo>
-<!--        <record id="email_template_without_hf" model="ir.ui.view">-->
-<!--            <field name="name">email.template.without.hf</field>-->
-<!--            <field name="inherit_id" ref="mail.mail_notification_paynow"/>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <xpath expr="//t/table/tr/td/table/tbody/tr/td/table" position="replace"/>-->
-<!--                <xpath expr="//t/table/tr/td/table/tbody/tr[1]" position="replace"/>-->
-<!--                <xpath expr="//t/table/tr/td/table/tbody/tr[2]" position="replace"/>-->
-<!--                <xpath expr="//t/table/tr[2]" position="replace">-->
-<!--                    <tr>-->
-<!--                        <td align="center" style="margin-top:-10px;min-width: 590px; padding: 8px; font-size:11px;"/>-->
-<!--                    </tr>-->
-<!--                </xpath>-->
-<!--            </field>-->
-<!--        </record>-->
+    <data noupdate="1">
+
+        <record id="mail_template_invoice_gannafote" model="mail.template">
+            <field name="name">Gannafote Invoice</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="email_from">{{ (object.invoice_user_id.email_formatted or object.company_id.email_formatted or user.email_formatted) }}</field>
+            <field name="partner_to">{{ object.partner_id.id }}</field>
+            <field name="subject">{{ object.company_id.name }} Factura (Ref {{ object.name or 'n/a' }})</field>
+            <field name="description">Sent to customers with their invoices in attachment</field>
+            <field name="body_html" type="html">
+
+<div style="margin: 0px; padding: 0px;">
+    <h1>Hola soy un template de mail</h1>
+</div>
+
+            </field>
+        </record>
+    </data>
 </odoo>
