@@ -94,18 +94,12 @@
             <field name="subject">{{ object.company_id.name }} Factura (Ref {{ object.name or 'n/a' }})</field>
             <field name="body_html" type="html">
                 <div id="header" style="margin-bottom: 150px">
-                    <div id="background-image" style="position: absolute; top: 0; left: 0;">
-                        <img src="/ganafote_document_format/static/src/img/mancha_esquina_arriba.png"
-                             width="300"
-                             style="border-style: none; box-sizing: border-box; display: block; height: auto; max-width: 100%; width: 50%;"
-                        />
-                    </div>
                     <div style="display: flex; justify-content: space-between;">
                         <div id="header_fig" style="width: 50%;">
                             <a href="https://ganafote.com">
-                                <img src="/ganafote_document_format/static/src/img/events_logo.png"
+                                <img src="/ganafote_document_format/static/src/img/logoymanchasuperior2.png"
                                      width="120"
-                                     style="border-style: none; box-sizing: border-box; display: inline-block; height: auto; margin-left: 90px; max-width: 100%; vertical-align: middle;"
+                                     style="border-style: none; box-sizing: border-box; display: inline-block; height: auto; width: 300px; max-width: 100%; vertical-align: middle;"
                                 />
                             </a>
                         </div>
@@ -124,8 +118,8 @@
                     style="clear:both;width:80%;margin:10px auto;font-size:1.5em;color:black;"
                 >
                     <h1>
-                        <p>!HOLA!
-                            <span style="color:#83c200">
+                        <p style="font-size: 40px">!HOLA!
+                            <span style="color:#83c200; text-transform: uppercase;">
                                 <t
                                     t-out="object.partner_id.name"
                                     data-oe-t-inline="true"
@@ -136,10 +130,11 @@
                         </p>
                     </h1>
                     <p>
-                        Desde el departamento de contabilidad de GAÑAFOTE SLU le hacemos llegar la Factura
+                        Desde el departamento de contabilidad de GAÑAFOTE SLU le hacemos llegar la
                         <span
                             style="color:#83c200"
                         >
+                            FACTURA
                             <span>
                                 <t
                                     t-out="object.name"
@@ -148,18 +143,52 @@
                                 />
                             </span>
                         </span>
-                        .
+                        correspondiente al total de su pedido
+                        <span
+                            style="color:#83c200"
+                        >
+                            PEDIDO
+                            <span>
+                                <t
+                                    t-out="object.sale_order_id.name"
+                                    data-oe-t-inline="true"
+                                    contenteditable="false"
+                                />
+                            </span>
+                        </span>
+                        . Del cual queda pendiente de pago la cantidad de
+                        <span
+                            style="color:#83c200"
+                        >
+                            <span>
+                                <t
+                                    t-out="object.amount_residual"
+                                    data-oe-t-inline="true"
+                                    contenteditable="false"
+                                />
+                                €
+                            </span>
+
+                        </span>
                     </p>
                     <p>
                         Gracias por su atención.
                     </p>
+<!--                    <div style="text-align: center; margin-top:50px;">-->
+<!--                        <button-->
+<!--                            style="background-color: black; color: #83c200; padding: 10px 20px; width: 400px; font-size: 16px; border: none; cursor: pointer;">-->
+<!--                            DESCARGA LA FACTURA-->
+<!--                        </button>-->
+<!--                    </div>-->
+
                 </div>
-                <div id="footer">
+                <div id="footer" style="text-align: center;">
                     <a href="https://ganafote.com">
                         <img
                             class="img-fluid o_we_custom_image"
-                            src="https://i.postimg.cc/wjfyC6Rd/banner-abajo.png"
+                            src="/ganafote_document_format/static/src/img/footer.png"
                             alt=""
+                            style="max-width: 400px; height: auto"
                         />
                     </a>
                 </div>

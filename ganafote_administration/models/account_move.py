@@ -6,7 +6,25 @@ from odoo import api, fields, models
 class AccountMove(models.Model):
     _inherit = "account.move"
 
-    is_delivered = fields.Boolean(string="Entregado", default=False)
+    sale_order_id = fields.Many2one(
+        string="Pedido de Venta",
+        comodel_name="sale.order",
+        compute="_compute_sale_order_id",
+        store=True,
+    )
+    is_delivered = fields.Boolean(
+        string="Entregado",
+        default=False
+    )
+
+    @api.depends("invoice_origin")
+    def _compute_sale_order_id(self):
+        for invoice in self:
+            sale_order = self.env["sale.order"].search(
+                [("name", "=", invoice.invoice_origin)]
+            )
+            if sale_order:
+                invoice.sale_order_id = sale_order.id
 
     @api.onchange("is_delivered")
     def _send_delivered_mail(self):
