@@ -22,6 +22,7 @@
         "data/invoice_email_template.xml",
         "data/loyalty_card_email_template.xml",
         "data/invoice_confirmation_email_template.xml",
+        "data/sale_email_template.xml",
         "views/external_layout_bold.xml",
         "views/report_sale_order.xml",
         "views/report_invoice.xml",
