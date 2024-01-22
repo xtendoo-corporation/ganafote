@@ -97,7 +97,7 @@
                     <div style="display: flex; justify-content: space-between;">
                         <div id="header_fig" style="width: 50%;">
                             <a href="https://ganafote.com">
-                                <img src="/ganafote_document_format/static/src/img/logoymanchasuperior2.png"
+                                <img src="https://ganafote16.xtendoo.es/ganafote_document_format/static/src/img/logoymanchasuperior2.png"
                                      width="120"
                                      style="border-style: none; box-sizing: border-box; display: inline-block; height: auto; width: 300px; max-width: 100%; vertical-align: middle;"
                                 />
@@ -186,7 +186,7 @@
                     <a href="https://ganafote.com">
                         <img
                             class="img-fluid o_we_custom_image"
-                            src="/ganafote_document_format/static/src/img/footer.png"
+                            src="https://ganafote16.xtendoo.es/ganafote_document_format/static/src/img/footer.png"
                             alt=""
                             style="max-width: 100%; height: auto"
                         />
@@ -215,7 +215,7 @@
                     <div style="display: flex; justify-content: space-between;">
                         <div id="header_fig" style="width: 50%;">
                             <a href="https://ganafote.com">
-                                <img src="/ganafote_document_format/static/src/img/logo-y-mancha-superior-events.png"
+                                <img src="https://ganafote16.xtendoo.es/ganafote_document_format/static/src/img/logo-y-mancha-superior-events.png"
                                      width="120"
                                      style="border-style: none; box-sizing: border-box; display: inline-block; height: auto; width: 300px; max-width: 100%; vertical-align: middle;"
                                 />
@@ -298,7 +298,7 @@
                     <a href="https://ganafote.com">
                         <img
                             class="img-fluid o_we_custom_image"
-                            src="/ganafote_document_format/static/src/img/ganafote-footer-events.png"
+                            src="https://ganafote16.xtendoo.es/ganafote_document_format/static/src/img/ganafote-footer-events.png"
                             alt=""
                             style="max-width: 100%; height: auto"
                         />
