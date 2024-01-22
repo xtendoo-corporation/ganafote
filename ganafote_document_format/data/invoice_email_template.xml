@@ -150,7 +150,7 @@
                             PEDIDO
                             <span>
                                 <t
-                                    t-out="object.sale_order_id.name"
+                                    t-out="object.invoice_origin"
                                     data-oe-t-inline="true"
                                     contenteditable="false"
                                 />
@@ -268,7 +268,7 @@
                             PEDIDO
                             <span>
                                 <t
-                                    t-out="object.sale_order_id.name"
+                                    t-out="object.invoice_origin"
                                     data-oe-t-inline="true"
                                     contenteditable="false"
                                 />
