@@ -118,7 +118,7 @@
                     style="clear:both;width:80%;margin:10px auto;font-size:1.5em;color:black;"
                 >
                     <h1>
-                        <p style="font-size: 40px">!HOLA!
+                        <p style="font-size: 40px">¡HOLA!
                             <span style="color:#83c200; text-transform: uppercase;">
                                 <t
                                     t-out="object.partner_id.name"
@@ -236,7 +236,7 @@
                     style="clear:both;width:80%;margin:10px auto;font-size:1.5em;color:black;"
                 >
                     <h1>
-                        <p style="font-size: 40px">!HOLA!
+                        <p style="font-size: 40px">¡HOLA!
                             <span style="color:#336eb4; text-transform: uppercase;">
                                 <t
                                     t-out="object.partner_id.name"
