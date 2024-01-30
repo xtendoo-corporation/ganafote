@@ -10,9 +10,14 @@ class SaleOrder(models.Model):
     def action_quotation_send(self):
         """Opens a wizard to compose an email, with relevant mail template loaded by default"""
         self.ensure_one()
-        template_id = (
-            self.env["mail.template"].search([("name", "=", "Presupuesto")], limit=1).id
-        )
+        if self.company_id.name == "Gañafote SLU":
+            template_id = (
+                self.env["mail.template"].search([("name", "=", "Ganafote Presupuestos ropa")], limit=1).id
+            )
+        else:
+            template_id = (
+                self.env["mail.template"].search([("name", "=", "Ganafote Presupuestos eventos")], limit=1).id
+            )
         lang = self.env.context.get("lang")
         template = self.env["mail.template"].browse(template_id)
         if template.lang:

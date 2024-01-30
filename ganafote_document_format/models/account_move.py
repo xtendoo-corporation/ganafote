@@ -10,9 +10,15 @@ class AccountMove(models.Model):
         message loaded by default
         """
         self.ensure_one()
-        template_id = (
-            self.env["mail.template"].search([("name", "=", "Factura")], limit=1).id
-        )
+        if self.company_id.name == "Gañafote SLU":
+            template_id = (
+                self.env["mail.template"].search([("name", "=", "Ganafote Factura ropa")], limit=1).id
+            )
+        else:
+            template_id = (
+                self.env["mail.template"].search([("name", "=", "Ganafote Factura eventos")], limit=1).id
+            )
+
         template = self.env["mail.template"].browse(template_id)
         lang = False
         if template:
