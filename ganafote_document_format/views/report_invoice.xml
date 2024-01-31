@@ -1,90 +1,84 @@
 <odoo>
     <record id="ganafote_report_invoice_document" model="ir.ui.view">
         <field name="name">ganafote.report.invoice.document</field>
-        <field name="inherit_id" ref="account.report_invoice_document" />
+        <field name="inherit_id" ref="account.report_invoice_document"/>
         <field name="arch" type="xml">
             <xpath expr="//div[@class='page']/h2" position="replace">
                 <t t-if="o.company_id.id == 1">
-                    <h2 style="color:#96c11e;">
-                    <div style="background-color:black;display:inline">
-                        <span
+                    <h2 style="color:#ffffff;">
+                        <div style="background-color:#83c200;display:inline;border-radius: 20px;padding: 10px 20px;">
+                            <span
                                 t-if="o.move_type == 'out_invoice' and o.state == 'posted'"
-                            >Factura
-                        </span>
-                        <span
-                                style="background-color:black;"
+                            >FACTURA
+                            </span>
+                            <span
                                 t-if="o.move_type == 'out_invoice' and o.state == 'draft'"
-                            >Factura borrador
-                        </span>
-                        <span
-                                style="background-color:black;"
+                            >FACTURA BORRADOR
+                            </span>
+                            <span
                                 t-if="o.move_type == 'out_invoice' and o.state == 'cancel'"
-                            >Factura cancelada
-                        </span>
-                        <span
-                                style="background-color:black;"
+                            >FACTURA CANCELADA
+                            </span>
+                            <span
                                 t-if="o.move_type == 'out_refund'"
-                            >Factura rectificativa
-                        </span>
-                        <span
-                                style="background-color:black;"
+                            >FACTURA RECTIFICATIVA
+                            </span>
+                            <span
                                 t-if="o.move_type == 'in_refund'"
-                            >Factura rectificativa de proveedor
-                        </span>
-                        <span
-                                style="background-color:black;"
+                            >FACTURA RECTIFICATIVA DE PROVEEDOR
+                            </span>
+                            <span
                                 t-if="o.move_type == 'in_invoice'"
-                            >Factura de proveedor
-                        </span>
-                        <span
-                                style="background-color:black;"
+                            >FACTURA DE PROVEEDOR
+                            </span>
+                            <span
                                 t-if="o.name != '/'"
                                 t-field="o.name"
                             />
-                    </div>
+                        </div>
 
-                </h2>
+                    </h2>
                 </t>
                 <t t-if="o.company_id.id == 2">
                     <h2 style="color:#006eb7;">
-                    <div style="background-color:black;display:inline">
-                        <span
+                        <div style="background-color:black;display:inline">
+                            <span
                                 t-if="o.move_type == 'out_invoice' and o.state == 'posted'"
-                            >Factura
-                        </span>
-                        <span
+                            >FACTURA
+                            </span>
+                            <span
                                 style="background-color:black;"
                                 t-if="o.move_type == 'out_invoice' and o.state == 'draft'"
-                            >Factura borrador
-                        </span>
-                        <span
+                            >FACTURA BORRADOR
+                            </span>
+                            <span
                                 style="background-color:black;"
                                 t-if="o.move_type == 'out_invoice' and o.state == 'cancel'"
-                            >Factura cancelada
-                        </span>
-                        <span
+                            >FACTURA CANCELADA
+                            </span>
+                            <span
                                 style="background-color:black;"
                                 t-if="o.move_type == 'out_refund'"
-                            >Factura rectificativa
-                        </span>
-                        <span
+                            >FACTURA RECTIFICATIVA
+                            </span>
+                            <span
                                 style="background-color:black;"
                                 t-if="o.move_type == 'in_refund'"
-                            >Factura rectificativa de proveedor
-                        </span>
-                        <span
+                            >FACTURA RECTIFICATIVA DE PROVEEDOR
+                            </span>
+                            <span
                                 style="background-color:black;"
                                 t-if="o.move_type == 'in_invoice'"
-                            >Factura de proveedor
-                        </span>
-                        <span
+                            >FACTURA DE PROVEEDOR
+                            </span>
+                            <span
                                 style="background-color:black;"
                                 t-if="o.name != '/'"
                                 t-field="o.name"
                             />
-                    </div>
+                        </div>
 
-                </h2>
+                    </h2>
                 </t>
 
             </xpath>
@@ -225,100 +219,110 @@
                     </t>
                 </tbody>
             </xpath>
-<!--            <xpath expr="//div[hasclass('clearfix')]" position="replace">-->
-<!--                <div class="clearfix" style="width:130%;margin-left:-30%;">-->
-<!--                    <div id="total" class="row">-->
-<!--                        <div-->
-<!--                            t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-6'} ml-auto"-->
-<!--                        >-->
-<!--                            <table-->
-<!--                                class="table table-sm"-->
-<!--                                style="page-break-inside: avoid;"-->
-<!--                            >-->
+            <!--            <xpath expr="//div[hasclass('clearfix')]" position="replace">-->
+            <!--                <div class="clearfix" style="width:130%;margin-left:-30%;">-->
+            <!--                    <div id="total" class="row">-->
+            <!--                        <div-->
+            <!--                            t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-6'} ml-auto"-->
+            <!--                        >-->
+            <!--                            <table-->
+            <!--                                class="table table-sm"-->
+            <!--                                style="page-break-inside: avoid;"-->
+            <!--                            >-->
 
-<!--                                &lt;!&ndash;Tax totals&ndash;&gt;-->
-<!--                                <t-->
-<!--                                    t-set="tax_totals"-->
-<!--                                    t-value="json.loads(o.tax_totals_json)"-->
-<!--                                />-->
-<!--                                <t t-call="account.document_tax_totals"/>-->
+            <!--                                &lt;!&ndash;Tax totals&ndash;&gt;-->
+            <!--                                <t-->
+            <!--                                    t-set="tax_totals"-->
+            <!--                                    t-value="json.loads(o.tax_totals_json)"-->
+            <!--                                />-->
+            <!--                                <t t-call="account.document_tax_totals"/>-->
 
-<!--                                &lt;!&ndash;Payments&ndash;&gt;-->
-<!--                                <t t-if="print_with_payments">-->
-<!--                                    <t t-if="o.payment_state != 'invoicing_legacy'">-->
-<!--                                        <t-->
-<!--                                            t-set="payments_vals"-->
-<!--                                            t-value="o.sudo()._get_reconciled_info_JSON_values()"-->
-<!--                                        />-->
-<!--                                        <t-->
-<!--                                            t-foreach="payments_vals"-->
-<!--                                            t-as="payment_vals"-->
-<!--                                        >-->
-<!--                                            <tr>-->
-<!--                                                <td>-->
-<!--                                                    <i-->
-<!--                                                        class="oe_form_field text-right oe_payment_label"-->
-<!--                                                    >Pagado en-->
-<!--                                                        <t-->
-<!--                                                            t-esc="payment_vals['date']"-->
-<!--                                                            t-options="{&quot;widget&quot;: &quot;date&quot;}"-->
-<!--                                                        />-->
-<!--                                                    </i>-->
-<!--                                                </td>-->
-<!--                                                <td class="text-right">-->
-<!--                                                    <span-->
-<!--                                                        t-esc="payment_vals['amount']"-->
-<!--                                                        t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"-->
-<!--                                                    />-->
-<!--                                                </td>-->
-<!--                                            </tr>-->
-<!--                                        </t>-->
-<!--                                        <t t-if="len(payments_vals) &gt; 0">-->
-<!--                                            <tr class="border-black">-->
-<!--                                                <td>-->
-<!--                                                    <strong-->
-<!--                                                    >Importe restante-->
-<!--                                                    </strong>-->
-<!--                                                </td>-->
-<!--                                                <td class="text-right">-->
-<!--                                                    <span-->
-<!--                                                        t-field="o.amount_residual"-->
-<!--                                                    />-->
-<!--                                                </td>-->
-<!--                                            </tr>-->
-<!--                                        </t>-->
-<!--                                    </t>-->
-<!--                                </t>-->
-<!--                            </table>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </xpath>-->
-            <xpath expr="//div[hasclass('clearfix')]" position="after">
+            <!--                                &lt;!&ndash;Payments&ndash;&gt;-->
+            <!--                                <t t-if="print_with_payments">-->
+            <!--                                    <t t-if="o.payment_state != 'invoicing_legacy'">-->
+            <!--                                        <t-->
+            <!--                                            t-set="payments_vals"-->
+            <!--                                            t-value="o.sudo()._get_reconciled_info_JSON_values()"-->
+            <!--                                        />-->
+            <!--                                        <t-->
+            <!--                                            t-foreach="payments_vals"-->
+            <!--                                            t-as="payment_vals"-->
+            <!--                                        >-->
+            <!--                                            <tr>-->
+            <!--                                                <td>-->
+            <!--                                                    <i-->
+            <!--                                                        class="oe_form_field text-right oe_payment_label"-->
+            <!--                                                    >Pagado en-->
+            <!--                                                        <t-->
+            <!--                                                            t-esc="payment_vals['date']"-->
+            <!--                                                            t-options="{&quot;widget&quot;: &quot;date&quot;}"-->
+            <!--                                                        />-->
+            <!--                                                    </i>-->
+            <!--                                                </td>-->
+            <!--                                                <td class="text-right">-->
+            <!--                                                    <span-->
+            <!--                                                        t-esc="payment_vals['amount']"-->
+            <!--                                                        t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"-->
+            <!--                                                    />-->
+            <!--                                                </td>-->
+            <!--                                            </tr>-->
+            <!--                                        </t>-->
+            <!--                                        <t t-if="len(payments_vals) &gt; 0">-->
+            <!--                                            <tr class="border-black">-->
+            <!--                                                <td>-->
+            <!--                                                    <strong-->
+            <!--                                                    >Importe restante-->
+            <!--                                                    </strong>-->
+            <!--                                                </td>-->
+            <!--                                                <td class="text-right">-->
+            <!--                                                    <span-->
+            <!--                                                        t-field="o.amount_residual"-->
+            <!--                                                    />-->
+            <!--                                                </td>-->
+            <!--                                            </tr>-->
+            <!--                                        </t>-->
+            <!--                                    </t>-->
+            <!--                                </t>-->
+            <!--                            </table>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </xpath>-->
+            <xpath expr="//div[@name='payment_term']" position="after">
                 <div
-                    style="width:100%;margin-top:10px;margin-left:-15px;padding-left:2px;"
+                    style="margin-top:10px; text-align: center;"
                 >
                     <t t-if="o.company_id.id == 1">
-                                        <p
-                            style="border:2px solid #96c11e;display:block;width:100%;font-weight:bolder;margin-top:5px;color:#96c11e;margin-left:15px;"
+                        <p
+                            style="border: 2px solid #83c200; border-radius:20px; display:inline-block;text-align:center; padding:10px 20px; margin-top:5px;"
                         >CUENTA GAÑAFOTE SLU = IBAN ES74 0049 0012 7123 1219 3764
-                                        </p>
-                                    </t>
-                                    <t t-if="o.company_id.id == 2">
-                                        <p
+                        </p>
+                    </t>
+                    <t t-if="o.company_id.id == 2">
+                        <p
                             style="border:2px solid #006eb7;display:block;width:100%;font-weight:bolder;margin-top:5px;color:#006eb7;margin-left:15px;"
                         >CUENTA GAÑAFOTE SPORTS EVENTS = IBAN ES34 0049 0012 7321 1219 3772
-                                        </p>
-                                    </t>
+                        </p>
+                    </t>
                 </div>
-
+                <div id="footer" style="text-align: center;">
+                    <a href="https://ganafote.com">
+                        <img
+                            class="img-fluid o_we_custom_image"
+                            src="/ganafote_document_format/static/src/img/ganafote-footer-sin-logo.png"
+                            alt="Footer"
+                            style="max-width: 100%; height: auto"
+                        />
+                    </a>
+                </div>
             </xpath>
-<!--             <xpath expr="//p[@name='incoterm']" position="after">-->
-<!--                <img-->
-<!--                    style="width:100%;"-->
-<!--                    src="/ganafote_document_format/static/src/img/premios_factura.png"-->
-<!--                />-->
-<!--            </xpath>-->
+
+            <!--             <xpath expr="//p[@name='incoterm']" position="after">-->
+            <!--                <img-->
+            <!--                    style="width:100%;"-->
+            <!--                    src="/ganafote_document_format/static/src/img/premios_factura.png"-->
+            <!--                />-->
+            <!--            </xpath>-->
         </field>
     </record>
 </odoo>

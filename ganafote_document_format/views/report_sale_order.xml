@@ -5,43 +5,41 @@
     >
         <xpath expr="//h2[@class='mt-4']" position="replace">
             <t t-if="doc.company_id.id == 1">
-                <h2 class="mt16" style="color:#96c11e;">
+                <h2 class="mt16"
+                    style="background-color:#83c200;display:inline;border-radius: 20px;padding: 10px 20px;color:#ffffff;">
                     <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
                         <span
-                            style="background-color:black;"
                             t-if="doc.state not in ['draft','sent']"
-                        >Pedido
+                        >PEDIDO
                         </span>
                         <span
-                            style="background-color:black;"
                             t-if="doc.state in ['draft','sent']"
-                        >Presupuesto
+                        >PRESUPUESTO
                         </span>
                     </t>
                     <t t-if="env.context.get('proforma', False) or is_pro_forma">
-                        <span style="background-color:black;">Factura pro-forma</span>
+                        <span>FACTURA PRO-FORMA</span>
                     </t>
-                    <span style="background-color:black;" t-field="doc.name" />
+                    <span t-field="doc.name"/>
                 </h2>
             </t>
             <t t-if="doc.company_id.id == 2">
-                <h2 class="mt16" style="color:#006eb7;">
+                <h2 class="mt16"
+                    style="background-color:#006eb7;display:inline;border-radius: 20px;padding: 10px 20px;color:#ffffff;">
                     <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
                         <span
-                            style="background-color:black;"
                             t-if="doc.state not in ['draft','sent']"
-                        >Pedido
+                        >PEDIDO
                         </span>
                         <span
-                            style="background-color:black;"
                             t-if="doc.state in ['draft','sent']"
-                        >Presupuesto
+                        >PRESUPUESTO
                         </span>
                     </t>
                     <t t-if="env.context.get('proforma', False) or is_pro_forma">
-                        <span style="background-color:black;">Factura pro-forma</span>
+                        <span>FACTURA PRO-FORMA</span>
                     </t>
-                    <span style="background-color:black;" t-field="doc.name" />
+                    <span t-field="doc.name"/>
                 </h2>
             </t>
         </xpath>
@@ -75,7 +73,7 @@
         <xpath expr="//table/tbody" position="replace">
             <tbody class="sale_tbody">
 
-                <t t-set="current_subtotal" t-value="0" />
+                <t t-set="current_subtotal" t-value="0"/>
 
                 <t t-foreach="doc.order_line" t-as="line">
 
@@ -95,21 +93,21 @@
                     >
                         <t t-if="not line.display_type">
                             <td name="td_name">
-                                <span t-field="line.name" />
+                                <span t-field="line.name"/>
                             </td>
                             <td name="td_quantity" style="text-align:right;">
-                                <span t-field="line.product_uom_qty" />
-                                <span t-field="line.product_uom" />
+                                <span t-field="line.product_uom_qty"/>
+                                <span t-field="line.product_uom"/>
                             </td>
                             <td name="td_priceunit" style="text-align:right;">
-                                <span t-field="line.price_unit" />
+                                <span t-field="line.price_unit"/>
                             </td>
                             <td
                                 t-if="display_discount"
                                 style="text-align:right;"
                                 groups="product.group_discount_per_so_line"
                             >
-                                <span t-field="line.discount" />
+                                <span t-field="line.discount"/>
                             </td>
                             <td name="td_subtotal" class="o_price_total" style="text-align:right;">
                                 <span
@@ -124,14 +122,14 @@
                         </t>
                         <t t-if="line.display_type == 'line_section'">
                             <td name="td_section_line" colspan="99">
-                                <span t-field="line.name" />
+                                <span t-field="line.name"/>
                             </td>
-                            <t t-set="current_section" t-value="line" />
-                            <t t-set="current_subtotal" t-value="0" />
+                            <t t-set="current_section" t-value="line"/>
+                            <t t-set="current_subtotal" t-value="0"/>
                         </t>
                         <t t-if="line.display_type == 'line_note'">
                             <td name="td_note_line" colspan="99">
-                                <span t-field="line.name" />
+                                <span t-field="line.name"/>
                             </td>
                         </t>
                     </tr>
@@ -182,18 +180,19 @@
                             <td>
                                 <div style="width:100%;margin-top:10px;">
                                     <div>
-                                        <p style="font-weight:bolder">Observaciones</p>
+                                        <p style="font-weight:bolder">OBSERVACIONES</p>
                                     </div>
-                                    <p>Diseños gratuitos.</p>
+                                    <p style="font-weight:bolder">DISEÑOS GRATUITOS.</p>
                                     <p
                                         style="display:block;width:100%;"
-                                    >Los diseños son gratuitos siempre que lleve un pedido solicitado y aceptado por
-                                        el
-                                        cliente.Incluidos nombre, número, logos de patrocinadores, eslogan,
-                                        leyendas...Todo cerrado en prendas subli. Todas las prendas vienen
-                                        individualmente plastificadas y planchadas. Plazos de entrega = una vez
-                                        ingresado el 50%, pedido cerrado y diseños aceptados, necesitamos 3-4
-                                        semanas.
+                                    >*Los diseños son gratuitos siempre que lleve un pedido solicitado y aceptado por el
+                                        cliente. Incluidos nombre, número, logos de patrocinadores, eslogan,
+                                        leyendas...Todo cerrado en prendas sublimadas.
+                                        Todas las prendas vienen individualmente plastificadas y planchadas.
+                                    </p>
+                                    <p>
+                                        Plazos de entrega = una vez ingresado el 50%, pedido cerrado y diseños
+                                        aceptados, necesitamos 3-4 semanas.
                                     </p>
                                 </div>
                             </td>
@@ -202,11 +201,11 @@
                     <tr>
                         <td>
                             <div
-                                style="width:100%;margin-top:10px;margin-left:-15px;padding-left:2px;"
+                                style="margin-top:0px; text-align: center;"
                             >
                                 <t t-if="doc.company_id.id == 1">
                                     <p
-                                        style="border:2px solid #96c11e;display:block;width:100%;font-weight:bolder;margin-top:5px;color:#96c11e;margin-left:15px;"
+                                        style="border: 2px solid #83c200; border-radius:20px; display:inline-block;text-align:center; padding:10px 20px; margin-top:5px;"
                                     >CUENTA GAÑAFOTE SLU = IBAN ES74 0049 0012 7123 1219 3764
                                     </p>
                                 </t>
@@ -216,8 +215,16 @@
                                     >CUENTA GAÑAFOTE SPORTS EVENTS = IBAN ES34 0049 0012 7321 1219 3772
                                     </p>
                                 </t>
-
-
+                            </div>
+                            <div id="footer" style="text-align: center;">
+                                <a href="https://ganafote.com">
+                                    <img
+                                        class="img-fluid o_we_custom_image"
+                                        src="/ganafote_document_format/static/src/img/ganafote-footer-sin-logo.png"
+                                        alt="Footer"
+                                        style="max-width: 100%; height: auto"
+                                    />
+                                </a>
                             </div>
                         </td>
                     </tr>
