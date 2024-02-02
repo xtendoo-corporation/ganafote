@@ -289,6 +289,9 @@
             <!--                </div>-->
             <!--            </xpath>-->
             <xpath expr="//div[@name='payment_term']" position="after">
+                <div>
+                    Términos y condiciones: https://ganafote16.xtendoo.es/terms
+                </div>
                 <div
                     style="margin-top:10px; text-align: center;"
                 >
@@ -305,16 +308,16 @@
                         </p>
                     </t>
                 </div>
-                <div id="footer" style="text-align: center;">
-                    <a href="https://ganafote.com">
-                        <img
-                            class="img-fluid o_we_custom_image"
-                            src="/ganafote_document_format/static/src/img/ganafote-footer-sin-logo.png"
-                            alt="Footer"
-                            style="max-width: 100%; height: auto"
-                        />
-                    </a>
-                </div>
+                <!--                <div id="footer" style="text-align: center;">-->
+                <!--                    <a href="https://ganafote.com">-->
+                <!--                        <img-->
+                <!--                            class="img-fluid o_we_custom_image"-->
+                <!--                            src="/ganafote_document_format/static/src/img/ganafote-footer-sin-logo.png"-->
+                <!--                            alt="Footer"-->
+                <!--                            style="max-width: 100%; height: auto"-->
+                <!--                        />-->
+                <!--                    </a>-->
+                <!--                </div>-->
             </xpath>
 
             <!--             <xpath expr="//p[@name='incoterm']" position="after">-->

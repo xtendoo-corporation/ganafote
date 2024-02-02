@@ -3,6 +3,8 @@
         id="ganafote_report_saleorder_document"
         inherit_id="sale.report_saleorder_document"
     >
+        <xpath expr="//t[@t-set='information_block']" position="replace">
+        </xpath>
         <xpath expr="//h2[@class='mt-4']" position="replace">
             <t t-if="doc.company_id.id == 1">
                 <h2 class="mt16"
@@ -201,7 +203,7 @@
                     <tr>
                         <td>
                             <div
-                                style="margin-top:0px; text-align: center;"
+                                style="text-align: center;"
                             >
                                 <t t-if="doc.company_id.id == 1">
                                     <p
@@ -211,53 +213,53 @@
                                 </t>
                                 <t t-if="doc.company_id.id == 2">
                                     <p
-                                        style="border:2px solid #006eb7;display:block;width:100%;font-weight:bolder;margin-top:5px;color:#006eb7;margin-left:15px;"
+                                        style="border: 2px solid #006eb7; border-radius:20px; display:inline-block;text-align:center; padding:10px 20px; margin-top:5px;"
                                     >CUENTA GAÑAFOTE SPORTS EVENTS = IBAN ES34 0049 0012 7321 1219 3772
                                     </p>
                                 </t>
                             </div>
-                            <div id="footer" style="text-align: center;">
-                                <a href="https://ganafote.com">
-                                    <img
-                                        class="img-fluid o_we_custom_image"
-                                        src="/ganafote_document_format/static/src/img/ganafote-footer-sin-logo.png"
-                                        alt="Footer"
-                                        style="max-width: 100%; height: auto"
-                                    />
-                                </a>
-                            </div>
+                            <!--                            <div id="footer" style="text-align: center;">-->
+                            <!--                                <a href="https://ganafote.com">-->
+                            <!--                                    <img-->
+                            <!--                                        class="img-fluid o_we_custom_image"-->
+                            <!--                                        src="/ganafote_document_format/static/src/img/ganafote-footer-sin-logo.png"-->
+                            <!--                                        alt="Footer"-->
+                            <!--                                        style="max-width: 100%; height: auto"-->
+                            <!--                                    />-->
+                            <!--                                </a>-->
+                            <!--                            </div>-->
                         </td>
                     </tr>
                     <t t-if="doc.company_id.id == 1">
                         <tr>
                             <td>
                                 <div style="width:100%;display:block">
-                                    <div style="width:100%;margin-top:10px;">
+                                    <div style="width:100%;margin-top:100px;">
                                         <div>
                                             <p
-                                                style="display:block;width:100%;font-weight:bolder;;"
+                                                style="background-color:#83c200;width:50%;display:block;border-radius: 20px;padding: 10px 20px;font-weight:bolder;"
                                             >Condiciones tras la aceptación del presupuesto
                                             </p>
                                         </div>
                                         <ol>
-                                            <li>
+                                            <li style="margin-bottom: 15px;">
                                                 El cliente debe saber que las maquetaciones en 3D son una
                                                 aproximación
                                                 al diseño real.
                                             </li>
-                                            <li>
+                                            <li style="margin-bottom: 15px;">
                                                 Los colores pueden tener alguna variación respecto al boceto
                                                 digital. El
                                                 cliente debe elegir
                                                 los pantones de color para los productos presupuestados.
                                             </li>
-                                            <li>
+                                            <li style="margin-bottom: 15px;">
                                                 El cliente acepta el diseño 3D sabiendo que no podrá sufrir
                                                 variaciones
                                                 tras la aceptación.
                                                 Una vez el pedido es lanzado a fabrica no podrá verse modificado.
                                             </li>
-                                            <li>
+                                            <li style="margin-bottom: 15px;">
                                                 El cliente revisará y dará visto bueno al pedido enviado por el área
                                                 de
                                                 administración.
@@ -265,7 +267,7 @@
                                                 del
                                                 cliente.
                                             </li>
-                                            <li>
+                                            <li style="margin-bottom: 15px;">
                                                 Una vez aceptado el diseño y el pedido correspondiente, GAÑAFOTE SLU
                                                 no
                                                 se hará
@@ -274,14 +276,14 @@
                                                 color, tamaño, talla,
                                                 logos, etc.
                                             </li>
-                                            <li>
+                                            <li style="margin-bottom: 15px;">
                                                 Los tiempos de entregas será de 3 a 4 semanas en &quot;temporada
                                                 normal&quot;.
                                                 Los tiempos de
                                                 entregas puede verse incrementado en 1 o 2 semanas en &quot;temporada
                                                 alta&quot;.
                                             </li>
-                                            <li>
+                                            <li style="margin-bottom: 15px;">
                                                 La tabla de medida es una referencia, las medidas para la selección
                                                 de
                                                 tallas pueden variar
@@ -292,16 +294,16 @@
                                         </ol>
                                         <div>
                                             <p
-                                                style="display:block;width:100%;font-weight:bolder;;"
+                                                style="background-color:#83c200;width:50%;display:block;border-radius: 20px;padding: 10px 20px;font-weight:bolder;"
                                             >Condiciones para tramitación de incidencias
                                             </p>
                                         </div>
                                         <ol>
-                                            <li>
+                                            <li style="margin-bottom: 15px;">
                                                 El cliente debe verificar los puntos 4 y 5 de la aceptación de
                                                 presupuesto.
                                             </li>
-                                            <li>
+                                            <li style="margin-bottom: 15px;">
                                                 Si se sospecha de una incidencia en tallas y medidas, el cliente
                                                 deberá
                                                 tomará las medidas
@@ -311,13 +313,13 @@
                                                 estirada y sin arrugas. Para enviar fotos a su comercial y aclarar
                                                 cualquier situacion.
                                             </li>
-                                            <li>
+                                            <li style="margin-bottom: 15px;">
                                                 El comercial podrá solicitarle el envío del producto a las
                                                 instalaciones
                                                 de GAÑAFOTE SLU,
                                                 para su verificación en caso de existir una incidencia.
                                             </li>
-                                            <li>
+                                            <li style="margin-bottom: 15px;">
                                                 En caso de existir una incidencia el comercial deberá empezar el
                                                 proceso
                                                 de dicha
@@ -328,7 +330,7 @@
                                                 producción o
                                                 solución de los problemas ocasionados.
                                             </li>
-                                            <li>
+                                            <li style="margin-bottom: 15px;">
                                                 Las incidencia se sacarán en el menor tiempo posible, pero siempre
                                                 sujeto al volumen de
                                                 producción de fábrica.
@@ -340,9 +342,12 @@
                         </tr>
                     </t>
                 </table>
-
             </div>
-
+            <div style="border: 2px solid #83c200; border-radius:20px;display:inline-flex;text-align:center; padding:10px 20px; margin-top: 30px;">
+                Términos y condiciones: https://ganafote16.xtendoo.es/terms
+            </div>
+        </xpath>
+        <xpath expr="//p[@t-if='not is_html_empty(doc.payment_term_id.note)']" position="replace">
         </xpath>
     </template>
 </odoo>
