@@ -39,48 +39,40 @@
 
                     </h2>
                 </t>
-                <t t-if="o.company_id.id == 2">
+                <t t-if="o.company_id.id != 1">
                     <h2 style="color:#ffffff;">
-                        <div style="background-color:058feb;display:inline;border-radius: 20px;padding: 10px 20px;">
+                        <div style="background-color:006eb7;display:inline;border-radius: 20px;padding: 10px 20px;">
                             <span
                                 t-if="o.move_type == 'out_invoice' and o.state == 'posted'"
                             >FACTURA
                             </span>
                             <span
-                                style="background-color:black;"
                                 t-if="o.move_type == 'out_invoice' and o.state == 'draft'"
                             >FACTURA BORRADOR
                             </span>
                             <span
-                                style="background-color:black;"
                                 t-if="o.move_type == 'out_invoice' and o.state == 'cancel'"
                             >FACTURA CANCELADA
                             </span>
                             <span
-                                style="background-color:black;"
                                 t-if="o.move_type == 'out_refund'"
                             >FACTURA RECTIFICATIVA
                             </span>
                             <span
-                                style="background-color:black;"
                                 t-if="o.move_type == 'in_refund'"
                             >FACTURA RECTIFICATIVA DE PROVEEDOR
                             </span>
                             <span
-                                style="background-color:black;"
                                 t-if="o.move_type == 'in_invoice'"
                             >FACTURA DE PROVEEDOR
                             </span>
                             <span
-                                style="background-color:black;"
                                 t-if="o.name != '/'"
                                 t-field="o.name"
                             />
                         </div>
-
                     </h2>
                 </t>
-
             </xpath>
             <xpath expr="//table/thead" position="replace">
                 <thead style="display: table-row-group">
@@ -234,7 +226,7 @@
                     </t>
                     <t t-if="o.company_id.id == 2">
                         <p
-                            style="border:2px solid #006eb7;display:block;width:100%;font-weight:bolder;margin-top:5px;color:#006eb7;margin-left:15px;"
+                            style="border:2px solid #006eb7;border-radius:20px; display:inline-block;text-align:center; padding:10px 20px; margin-top:5px;"
                         >CUENTA GAÑAFOTE SPORTS EVENTS = IBAN ES34 0049 0012 7321 1219 3772
                         </p>
                     </t>

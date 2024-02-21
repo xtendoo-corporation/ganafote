@@ -309,6 +309,117 @@
                             </td>
                         </tr>
                     </t>
+                    <t t-if="doc.company_id.id == 2">
+                        <tr>
+                            <td>
+                                <div style="width:100%;display:block">
+                                    <div style="width:100%;margin-top:10px;">
+                                        <div>
+                                            <p
+                                                style="background-color:#006eb7;width:50%;display:block;border-radius: 20px;padding: 10px 20px;font-weight:bolder;"
+                                            >Condiciones tras la aceptación del presupuesto
+                                            </p>
+                                        </div>
+                                        <ol>
+                                            <li style="margin-bottom: 15px;">
+                                                El cliente debe saber que las maquetaciones en 3D son una
+                                                aproximación
+                                                al diseño real.
+                                            </li>
+                                            <li style="margin-bottom: 15px;">
+                                                Los colores pueden tener alguna variación respecto al boceto
+                                                digital. El
+                                                cliente debe elegir
+                                                los pantones de color para los productos presupuestados.
+                                            </li>
+                                            <li style="margin-bottom: 15px;">
+                                                El cliente acepta el diseño 3D sabiendo que no podrá sufrir
+                                                variaciones
+                                                tras la aceptación.
+                                                Una vez el pedido es lanzado a fabrica no podrá verse modificado.
+                                            </li>
+                                            <li style="margin-bottom: 15px;">
+                                                El cliente revisará y dará visto bueno al pedido enviado por el área
+                                                de
+                                                administración.
+                                                Cualquier error del mismo, tras la revisión, será responsabilidad
+                                                del
+                                                cliente.
+                                            </li>
+                                            <li style="margin-bottom: 15px;">
+                                                Una vez aceptado el diseño y el pedido correspondiente, GAÑAFOTE SLU
+                                                no
+                                                se hará
+                                                responsable de los posibles errores tanto de ortografía, textos,
+                                                formas,
+                                                color, tamaño, talla,
+                                                logos, etc.
+                                            </li>
+                                            <li style="margin-bottom: 15px;">
+                                                Los tiempos de entregas será de 3 a 4 semanas en &quot;temporada
+                                                normal&quot;.
+                                                Los tiempos de
+                                                entregas puede verse incrementado en 1 o 2 semanas en &quot;temporada
+                                                alta&quot;.
+                                            </li>
+                                            <li style="margin-bottom: 15px;">
+                                                La tabla de medida es una referencia, las medidas para la selección
+                                                de
+                                                tallas pueden variar
+                                                0.50 o 1 cm con respecto al documento que se envía. Las tallas deben
+                                                medirse de la misma
+                                                forma que se indica en el documento.
+                                            </li>
+                                        </ol>
+                                        <div>
+                                            <p
+                                                style="background-color:#006eb7;width:50%;display:block;border-radius: 20px;padding: 10px 20px;font-weight:bolder;"
+                                            >Condiciones para tramitación de incidencias
+                                            </p>
+                                        </div>
+                                        <ol>
+                                            <li style="margin-bottom: 15px;">
+                                                El cliente debe verificar los puntos 4 y 5 de la aceptación de
+                                                presupuesto.
+                                            </li>
+                                            <li style="margin-bottom: 15px;">
+                                                Si se sospecha de una incidencia en tallas y medidas, el cliente
+                                                deberá
+                                                tomará las medidas
+                                                como se indica en la tabla de medidas, teniendo en cuenta que la
+                                                prenda
+                                                debe estar bien
+                                                estirada y sin arrugas. Para enviar fotos a su comercial y aclarar
+                                                cualquier situacion.
+                                            </li>
+                                            <li style="margin-bottom: 15px;">
+                                                El comercial podrá solicitarle el envío del producto a las
+                                                instalaciones
+                                                de GAÑAFOTE SLU,
+                                                para su verificación en caso de existir una incidencia.
+                                            </li>
+                                            <li style="margin-bottom: 15px;">
+                                                En caso de existir una incidencia el comercial deberá empezar el
+                                                proceso
+                                                de dicha
+                                                incidencia. El cliente deberá proceder al envió de los productos
+                                                defectuosos, para que
+                                                GAÑAFOTE SLU, haga llegar esos productos a fábrica y se inicié la
+                                                nueva
+                                                producción o
+                                                solución de los problemas ocasionados.
+                                            </li>
+                                            <li style="margin-bottom: 15px;">
+                                                Las incidencia se sacarán en el menor tiempo posible, pero siempre
+                                                sujeto al volumen de
+                                                producción de fábrica.
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </t>
                 </table>
             </div>
             <div
