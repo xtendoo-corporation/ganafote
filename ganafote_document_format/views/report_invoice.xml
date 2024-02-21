@@ -40,8 +40,8 @@
                     </h2>
                 </t>
                 <t t-if="o.company_id.id == 2">
-                    <h2 style="color:#006eb7;">
-                        <div style="background-color:black;display:inline">
+                    <h2 style="color:#ffffff;">
+                        <div style="background-color:058feb;display:inline;border-radius: 20px;padding: 10px 20px;">
                             <span
                                 t-if="o.move_type == 'out_invoice' and o.state == 'posted'"
                             >FACTURA
