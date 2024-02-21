@@ -152,28 +152,6 @@
                 </t>
             </tbody>
         </xpath>
-        <!--            <xpath expr="//div[hasclass('clearfix')]" position="replace">-->
-        <!--                <div-->
-        <!--                    class="clearfix"-->
-        <!--                    name="so_total_summary"-->
-        <!--                    style="width:200%!important;margin-left:-100%;"-->
-        <!--                >-->
-        <!--                    <div id="total" class="row" name="total">-->
-        <!--                        <div-->
-        <!--                            t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto"-->
-        <!--                        >-->
-        <!--                            <table class="table table-sm">-->
-        <!--                                &lt;!&ndash; Tax totals &ndash;&gt;-->
-        <!--                                <t-->
-        <!--                                    t-set="tax_totals"-->
-        <!--                                    t-value="json.loads(doc.tax_totals_json)"-->
-        <!--                                />-->
-        <!--                                <t t-call="account.document_tax_totals"/>-->
-        <!--                            </table>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </xpath>-->
         <xpath expr="//div[hasclass('clearfix')]" position="after">
             <div style="width:100%;display:block">
                 <table style="width:100%;border-color:white;">
@@ -218,16 +196,6 @@
                                     </p>
                                 </t>
                             </div>
-                            <!--                            <div id="footer" style="text-align: center;">-->
-                            <!--                                <a href="https://ganafote.com">-->
-                            <!--                                    <img-->
-                            <!--                                        class="img-fluid o_we_custom_image"-->
-                            <!--                                        src="/ganafote_document_format/static/src/img/ganafote-footer-sin-logo.png"-->
-                            <!--                                        alt="Footer"-->
-                            <!--                                        style="max-width: 100%; height: auto"-->
-                            <!--                                    />-->
-                            <!--                                </a>-->
-                            <!--                            </div>-->
                         </td>
                     </tr>
                     <t t-if="doc.company_id.id == 1">
@@ -347,9 +315,10 @@
                 style="border: 2px solid #83c200; border-radius:20px;display:inline-flex;text-align:center; padding:10px 20px; margin-top: 30px;">
                 Términos y condiciones: https://ganafote16.xtendoo.es/terms
             </div>
-            <div style="font-size:14px; margin-top:20px">
-                <span style="font-weight:bolder;">Información sobre protección de datos:</span> Como responsable del tratamiento le informamos que
-                reca-bamos sus datos con la finalidad de elaborar su presupuesto. La base legal es el
+            <div style="font-size:14px; margin-top:20px; page-break-inside: avoid;">
+                <span style="font-weight:bolder;">Información sobre protección de datos:</span>
+                Como responsable del tratamiento le informamos que
+                recabamos sus datos con la finalidad de elaborar su presupuesto. La base legal es el
                 consentimiento por usted prestado para el tratamiento de sus datos. Conservaremos sus datos por un
                 plazo de 2 a 6 meses. Los datos no se cederán a terceros salvo en los casos en que exista una
                 obligación legal. Puede ejercer sus derechos de acceso, rectificación, supresión y portabilidad de sus
