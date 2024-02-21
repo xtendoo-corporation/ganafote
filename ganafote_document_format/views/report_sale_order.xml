@@ -234,7 +234,7 @@
                         <tr>
                             <td>
                                 <div style="width:100%;display:block">
-                                    <div style="width:100%;margin-top:100px;">
+                                    <div style="width:100%;margin-top:10px;">
                                         <div>
                                             <p
                                                 style="background-color:#83c200;width:50%;display:block;border-radius: 20px;padding: 10px 20px;font-weight:bolder;"
@@ -343,8 +343,19 @@
                     </t>
                 </table>
             </div>
-            <div style="border: 2px solid #83c200; border-radius:20px;display:inline-flex;text-align:center; padding:10px 20px; margin-top: 30px;">
+            <div
+                style="border: 2px solid #83c200; border-radius:20px;display:inline-flex;text-align:center; padding:10px 20px; margin-top: 30px;">
                 Términos y condiciones: https://ganafote16.xtendoo.es/terms
+            </div>
+            <div style="font-size:14px; margin-top:20px">
+                <span style="font-weight:bolder;">Información sobre protección de datos:</span> Como responsable del tratamiento le informamos que
+                reca-bamos sus datos con la finalidad de elaborar su presupuesto. La base legal es el
+                consentimiento por usted prestado para el tratamiento de sus datos. Conservaremos sus datos por un
+                plazo de 2 a 6 meses. Los datos no se cederán a terceros salvo en los casos en que exista una
+                obligación legal. Puede ejercer sus derechos de acceso, rectificación, supresión y portabilidad de sus
+                datos, y la limitación u oposición a su tratamiento a través de nuestro correo electrónico o domicilio
+                fiscal. De igual modo, podría interponer una reclamación ante la Autoridad de Control en
+                www.aepd.es.
             </div>
         </xpath>
         <xpath expr="//p[@t-if='not is_html_empty(doc.payment_term_id.note)']" position="replace">
