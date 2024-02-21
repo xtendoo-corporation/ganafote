@@ -1,78 +1,50 @@
 <odoo>
+
     <record id="ganafote_report_invoice_document" model="ir.ui.view">
         <field name="name">ganafote.report.invoice.document</field>
         <field name="inherit_id" ref="account.report_invoice_document"/>
         <field name="arch" type="xml">
             <xpath expr="//div[@class='page']/h2" position="replace">
-                <t t-if="o.company_id.id == 1">
-                    <h2 style="color:#ffffff;">
-                        <div style="background-color:#83c200;display:inline;border-radius: 20px;padding: 10px 20px;">
-                            <span
-                                t-if="o.move_type == 'out_invoice' and o.state == 'posted'"
-                            >FACTURA
-                            </span>
-                            <span
-                                t-if="o.move_type == 'out_invoice' and o.state == 'draft'"
-                            >FACTURA BORRADOR
-                            </span>
-                            <span
-                                t-if="o.move_type == 'out_invoice' and o.state == 'cancel'"
-                            >FACTURA CANCELADA
-                            </span>
-                            <span
-                                t-if="o.move_type == 'out_refund'"
-                            >FACTURA RECTIFICATIVA
-                            </span>
-                            <span
-                                t-if="o.move_type == 'in_refund'"
-                            >FACTURA RECTIFICATIVA DE PROVEEDOR
-                            </span>
-                            <span
-                                t-if="o.move_type == 'in_invoice'"
-                            >FACTURA DE PROVEEDOR
-                            </span>
-                            <span
-                                t-if="o.name != '/'"
-                                t-field="o.name"
-                            />
-                        </div>
 
-                    </h2>
+                <t t-if="o.company_id.id == 1">
+                    <t t-set="colorbackground" t-value="'background-color:#83c200; display:inline;border-radius: 20px; padding: 10px 20px;'" />
                 </t>
                 <t t-if="o.company_id.id != 1">
-                    <h2 style="color:#ffffff;">
-                        <div style="background-color:006eb7;display:inline;border-radius: 20px;padding: 10px 20px;">
-                            <span
-                                t-if="o.move_type == 'out_invoice' and o.state == 'posted'"
-                            >FACTURA
-                            </span>
-                            <span
-                                t-if="o.move_type == 'out_invoice' and o.state == 'draft'"
-                            >FACTURA BORRADOR
-                            </span>
-                            <span
-                                t-if="o.move_type == 'out_invoice' and o.state == 'cancel'"
-                            >FACTURA CANCELADA
-                            </span>
-                            <span
-                                t-if="o.move_type == 'out_refund'"
-                            >FACTURA RECTIFICATIVA
-                            </span>
-                            <span
-                                t-if="o.move_type == 'in_refund'"
-                            >FACTURA RECTIFICATIVA DE PROVEEDOR
-                            </span>
-                            <span
-                                t-if="o.move_type == 'in_invoice'"
-                            >FACTURA DE PROVEEDOR
-                            </span>
-                            <span
-                                t-if="o.name != '/'"
-                                t-field="o.name"
-                            />
-                        </div>
-                    </h2>
+                    <t t-set="colorbackground" t-value="'background-color:#006eb7; display:inline;border-radius: 20px; padding: 10px 20px;'" />
                 </t>
+
+                <h2 style="color:#ffffff;">
+                    <div t-att-style="colorbackground">
+                        <span
+                            t-if="o.move_type == 'out_invoice' and o.state == 'posted'"
+                        >FACTURA
+                        </span>
+                        <span
+                            t-if="o.move_type == 'out_invoice' and o.state == 'draft'"
+                        >FACTURA BORRADOR
+                        </span>
+                        <span
+                            t-if="o.move_type == 'out_invoice' and o.state == 'cancel'"
+                        >FACTURA CANCELADA
+                        </span>
+                        <span
+                            t-if="o.move_type == 'out_refund'"
+                        >FACTURA RECTIFICATIVA
+                        </span>
+                        <span
+                            t-if="o.move_type == 'in_refund'"
+                        >FACTURA RECTIFICATIVA DE PROVEEDOR
+                        </span>
+                        <span
+                            t-if="o.move_type == 'in_invoice'"
+                        >FACTURA DE PROVEEDOR
+                        </span>
+                        <span
+                            t-if="o.name != '/'"
+                            t-field="o.name"
+                        />
+                    </div>
+                </h2>
             </xpath>
             <xpath expr="//table/thead" position="replace">
                 <thead style="display: table-row-group">
@@ -88,7 +60,6 @@
                         >
                             <span>Desc.%</span>
                         </th>
-                        <!-- <th name="th_taxes" class="text-right">Taxes</th>-->
                         <th name="th_subtotal" style="text-align:right;">
                             <span
                                 groups="account.group_show_line_subtotals_tax_excluded"
@@ -231,7 +202,7 @@
                         </p>
                     </t>
                 </div>
-                <div style="font-size:14px; margin-top:20px">
+                <div style="font-size:14px; margin-top:20px; page-break-inside: avoid;">
                     <span style="font-weight:bolder;">Información sobre protección de datos:</span>
                     Como responsable del tratamiento le informamos que
                     recabamos sus datos con la finalidad de prestarles el servicio solicitado y emitir la
