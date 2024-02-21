@@ -219,75 +219,6 @@
                     </t>
                 </tbody>
             </xpath>
-            <!--            <xpath expr="//div[hasclass('clearfix')]" position="replace">-->
-            <!--                <div class="clearfix" style="width:130%;margin-left:-30%;">-->
-            <!--                    <div id="total" class="row">-->
-            <!--                        <div-->
-            <!--                            t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-6'} ml-auto"-->
-            <!--                        >-->
-            <!--                            <table-->
-            <!--                                class="table table-sm"-->
-            <!--                                style="page-break-inside: avoid;"-->
-            <!--                            >-->
-
-            <!--                                &lt;!&ndash;Tax totals&ndash;&gt;-->
-            <!--                                <t-->
-            <!--                                    t-set="tax_totals"-->
-            <!--                                    t-value="json.loads(o.tax_totals_json)"-->
-            <!--                                />-->
-            <!--                                <t t-call="account.document_tax_totals"/>-->
-
-            <!--                                &lt;!&ndash;Payments&ndash;&gt;-->
-            <!--                                <t t-if="print_with_payments">-->
-            <!--                                    <t t-if="o.payment_state != 'invoicing_legacy'">-->
-            <!--                                        <t-->
-            <!--                                            t-set="payments_vals"-->
-            <!--                                            t-value="o.sudo()._get_reconciled_info_JSON_values()"-->
-            <!--                                        />-->
-            <!--                                        <t-->
-            <!--                                            t-foreach="payments_vals"-->
-            <!--                                            t-as="payment_vals"-->
-            <!--                                        >-->
-            <!--                                            <tr>-->
-            <!--                                                <td>-->
-            <!--                                                    <i-->
-            <!--                                                        class="oe_form_field text-right oe_payment_label"-->
-            <!--                                                    >Pagado en-->
-            <!--                                                        <t-->
-            <!--                                                            t-esc="payment_vals['date']"-->
-            <!--                                                            t-options="{&quot;widget&quot;: &quot;date&quot;}"-->
-            <!--                                                        />-->
-            <!--                                                    </i>-->
-            <!--                                                </td>-->
-            <!--                                                <td class="text-right">-->
-            <!--                                                    <span-->
-            <!--                                                        t-esc="payment_vals['amount']"-->
-            <!--                                                        t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"-->
-            <!--                                                    />-->
-            <!--                                                </td>-->
-            <!--                                            </tr>-->
-            <!--                                        </t>-->
-            <!--                                        <t t-if="len(payments_vals) &gt; 0">-->
-            <!--                                            <tr class="border-black">-->
-            <!--                                                <td>-->
-            <!--                                                    <strong-->
-            <!--                                                    >Importe restante-->
-            <!--                                                    </strong>-->
-            <!--                                                </td>-->
-            <!--                                                <td class="text-right">-->
-            <!--                                                    <span-->
-            <!--                                                        t-field="o.amount_residual"-->
-            <!--                                                    />-->
-            <!--                                                </td>-->
-            <!--                                            </tr>-->
-            <!--                                        </t>-->
-            <!--                                    </t>-->
-            <!--                                </t>-->
-            <!--                            </table>-->
-            <!--                        </div>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </xpath>-->
             <xpath expr="//div[@name='payment_term']" position="after">
                 <div>
                     Términos y condiciones: https://ganafote16.xtendoo.es/terms
@@ -311,7 +242,7 @@
                 <div style="font-size:14px; margin-top:20px">
                     <span style="font-weight:bolder;">Información sobre protección de datos:</span>
                     Como responsable del tratamiento le informamos que
-                    reca-bamos sus datos con la finalidad de prestarles el servicio solicitado y emitir la
+                    recabamos sus datos con la finalidad de prestarles el servicio solicitado y emitir la
                     correspondiente
                     factura del mismo. La base legal para el tratamiento de sus datos es la ejecución del servicio
                     contratado y la obligación legal de expedir la factura del mismo. Conservaremos sus datos el
@@ -320,26 +251,9 @@
                     acceso,
                     rectificación, supresión y portabilidad de sus datos, y la limitación u oposición a su tratamiento a
                     través de nuestro correo electrónico o domicilio fiscal. De igual modo, podría interponer una
-                    reclamación ante la Autori-dad de Control en www.aepd.es.
+                    reclamación ante la Autoridad de Control en www.aepd.es.
                 </div>
-                <!--                <div id="footer" style="text-align: center;">-->
-                <!--                    <a href="https://ganafote.com">-->
-                <!--                        <img-->
-                <!--                            class="img-fluid o_we_custom_image"-->
-                <!--                            src="/ganafote_document_format/static/src/img/ganafote-footer-sin-logo.png"-->
-                <!--                            alt="Footer"-->
-                <!--                            style="max-width: 100%; height: auto"-->
-                <!--                        />-->
-                <!--                    </a>-->
-                <!--                </div>-->
             </xpath>
-
-            <!--             <xpath expr="//p[@name='incoterm']" position="after">-->
-            <!--                <img-->
-            <!--                    style="width:100%;"-->
-            <!--                    src="/ganafote_document_format/static/src/img/premios_factura.png"-->
-            <!--                />-->
-            <!--            </xpath>-->
         </field>
     </record>
 </odoo>
