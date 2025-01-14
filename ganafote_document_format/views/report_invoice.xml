@@ -238,13 +238,17 @@
                                     <t t-foreach="payments_vals" t-as="payment_vals">
                                         <tr t-if="payment_vals['is_exchange'] == 0">
                                             <td style="margin: 0px; padding: 0px;">
+                                                <strong>
                                                 <i class="oe_form_field text-end oe_payment_label">Paid on
                                                     <t t-esc="payment_vals['date']" t-options='{"widget": "date"}'/>
                                                 </i>
+                                                </strong>
                                             </td>
                                             <td class="text-end" style="margin: 0px; padding: 0px;">
+                                                <strong>
                                                 <span t-esc="payment_vals['amount']"
                                                       t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                </strong>
                                             </td>
                                         </tr>
                                     </t>
@@ -276,10 +280,12 @@
                     </td>
 
                     <td class="text-end" style="margin: 0px; padding: 0px;">
-                        <span
-                            t-att-class="oe_subtotal_footer_separator"
-                            t-esc="subtotal['formatted_amount']"
-                        />
+                        <strong>
+                            <span
+                                t-att-class="oe_subtotal_footer_separator"
+                                t-esc="subtotal['formatted_amount']"
+                            />
+                        </strong>
                     </td>
                 </tr>
             </xpath>
@@ -288,9 +294,11 @@
                     <strong>Total</strong>
                 </td>
                 <td class="text-end" style="margin: 0px; padding: 0px;">
-                    <span t-esc="tax_totals['formatted_amount_total_rounded']"
-                          t-if="'formatted_amount_total_rounded' in tax_totals"/>
-                    <span t-esc="tax_totals['formatted_amount_total']" t-else=""/>
+                    <strong>
+                        <span t-esc="tax_totals['formatted_amount_total_rounded']"
+                              t-if="'formatted_amount_total_rounded' in tax_totals"/>
+                        <span t-esc="tax_totals['formatted_amount_total']" t-else=""/>
+                    </strong>
                 </td>
             </xpath>
         </field>
@@ -301,27 +309,37 @@
         <field name="name">custom.document.tax.totals</field>
         <field name="inherit_id" ref="account.tax_groups_totals"/>
         <field name="arch" type="xml">
-             <xpath expr="//tr" position="replace">
-                  <tr>
+            <xpath expr="//tr" position="replace">
+                <tr>
                     <t t-if="tax_totals['display_tax_base']">
                         <td style="margin: 0px; padding: 0px;">
-                            <span t-esc="amount_by_group['tax_group_name']"/>
-                            <span t-if="not amount_by_group['hide_base_amount']" class="text-nowrap"> on
-                                <t t-esc="amount_by_group['formatted_tax_group_base_amount']"/>
-                            </span>
+                            <strong>
+                                <span t-esc="amount_by_group['tax_group_name']"/>
+                                <span t-if="not amount_by_group['hide_base_amount']" class="text-nowrap">on
+                                    <t t-esc="amount_by_group['formatted_tax_group_base_amount']"/>
+                                </span>
+                            </strong>
                         </td>
                         <td class="text-end o_price_total" style="margin: 0px; padding: 0px;">
-                            <span class="text-nowrap" t-esc="amount_by_group['formatted_tax_group_amount']"/>
+                            <strong>
+                                <span class="text-nowrap" t-esc="amount_by_group['formatted_tax_group_amount']"/>
+                            </strong>
                         </td>
                     </t>
                     <t t-else="">
-                        <td style="margin: 0px; padding: 0px;"><span class="text-nowrap" t-esc="amount_by_group['tax_group_name']"/></td>
+                        <td style="margin: 0px; padding: 0px;">
+                            <strong>
+                            <span class="text-nowrap" t-esc="amount_by_group['tax_group_name']"/>
+                            </strong>
+                        </td>
                         <td class="text-end o_price_total" style="margin: 0px; padding: 0px;">
-                            <span class="text-nowrap" t-esc="amount_by_group['formatted_tax_group_amount']" />
+                            <strong>
+                                <span class="text-nowrap" t-esc="amount_by_group['formatted_tax_group_amount']"/>
+                            </strong>
                         </td>
                     </t>
                 </tr>
-             </xpath>
+            </xpath>
         </field>
     </record>
 </odoo>
