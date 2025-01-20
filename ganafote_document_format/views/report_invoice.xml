@@ -185,6 +185,21 @@
                 </tbody>
             </xpath>
             <xpath expr="//div[@name='payment_term']" position="after">
+                 <div style="font-size:11px; margin-top:15px; page-break-inside: avoid;">
+                    <span style="font-weight:bolder;">Información sobre protección de datos:</span>
+                    Como responsable del tratamiento le informamos que
+                    recabamos sus datos con la finalidad de prestarles el servicio solicitado y emitir la
+                    correspondiente
+                    factura del mismo. La base legal para el tratamiento de sus datos es la ejecución del servicio
+                    contratado y la obligación legal de expedir la factura del mismo. Conservaremos sus datos el
+                    tiempo estrictamente necesario para responder a exigencias legales. Los datos no se cederán a
+                    terceros salvo en los casos en que exista una obligación legal. Puede ejercer sus derechos de
+                    acceso,
+                    rectificación, supresión y portabilidad de sus datos, y la limitación u oposición a su tratamiento a
+                    través de nuestro correo electrónico o domicilio fiscal. De igual modo, podría interponer una
+                    reclamación ante la Autoridad de Control en www.aepd.es.
+                </div>
+                <br/>
                 <div>
                     Términos y condiciones: https://ganafote16.xtendoo.es/terms
                 </div>
@@ -203,20 +218,6 @@
                         >CUENTA GAÑAFOTE SPORTS EVENTS = IBAN ES34 0049 0012 7321 1219 3772
                         </p>
                     </t>
-                </div>
-                <div style="font-size:14px; margin-top:10px; page-break-inside: avoid;">
-                    <span style="font-weight:bolder;">Información sobre protección de datos:</span>
-                    Como responsable del tratamiento le informamos que
-                    recabamos sus datos con la finalidad de prestarles el servicio solicitado y emitir la
-                    correspondiente
-                    factura del mismo. La base legal para el tratamiento de sus datos es la ejecución del servicio
-                    contratado y la obligación legal de expedir la factura del mismo. Conservaremos sus datos el
-                    tiempo estrictamente necesario para responder a exigencias legales. Los datos no se cederán a
-                    terceros salvo en los casos en que exista una obligación legal. Puede ejercer sus derechos de
-                    acceso,
-                    rectificación, supresión y portabilidad de sus datos, y la limitación u oposición a su tratamiento a
-                    través de nuestro correo electrónico o domicilio fiscal. De igual modo, podría interponer una
-                    reclamación ante la Autoridad de Control en www.aepd.es.
                 </div>
             </xpath>
             <!--            <div class="clearfix mb-4">-->
@@ -238,11 +239,9 @@
                                     <t t-foreach="payments_vals" t-as="payment_vals">
                                         <tr t-if="payment_vals['is_exchange'] == 0">
                                             <td style="margin: 0px; padding: 0px;">
-                                                <strong>
                                                 <i class="oe_form_field text-end oe_payment_label">Paid on
                                                     <t t-esc="payment_vals['date']" t-options='{"widget": "date"}'/>
                                                 </i>
-                                                </strong>
                                             </td>
                                             <td class="text-end" style="margin: 0px; padding: 0px;">
                                                 <strong>
@@ -253,7 +252,7 @@
                                         </tr>
                                     </t>
                                     <t t-if="len(payments_vals) > 0">
-                                        <tr class="border-black fw-bold">
+                                        <tr class="border-black">
                                             <td style="margin: 0px; padding: 0px;">Amount Due</td>
                                             <td class="text-end" style="margin: 0px; padding: 0px;">
                                                 <span t-field="o.amount_residual"/>
@@ -275,11 +274,11 @@
         <field name="arch" type="xml">
             <xpath expr="//tr[@class='border-black o_subtotal']" position="replace">
                 <tr class="border-black o_subtotal">
-                    <td style="margin: 0px; padding: 0px;">
+                    <td style="margin: 0px; padding: 0px; font-size:20px;">
                         <strong t-esc="subtotal['name']"/>
                     </td>
 
-                    <td class="text-end" style="margin: 0px; padding: 0px;">
+                    <td class="text-end" style="margin: 0px; padding: 0px; font-size:20px;">
                         <strong>
                             <span
                                 t-att-class="oe_subtotal_footer_separator"
@@ -290,10 +289,10 @@
                 </tr>
             </xpath>
             <xpath expr="//tr[@class='border-black o_total']" position="replace">
-                <td style="margin: 0px; padding: 0px;">
+                <td style="margin: 0px; padding: 0px; font-size:20px;">
                     <strong>Total</strong>
                 </td>
-                <td class="text-end" style="margin: 0px; padding: 0px;">
+                <td class="text-end" style="margin: 0px; padding: 0px; font-size:20px;">
                     <strong>
                         <span t-esc="tax_totals['formatted_amount_total_rounded']"
                               t-if="'formatted_amount_total_rounded' in tax_totals"/>
