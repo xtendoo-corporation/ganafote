@@ -252,7 +252,7 @@
                                     <t t-if="len(payments_vals) > 0">
                                         <tr class="border-black">
                                             <td style="margin: 0px; padding: 0px; font-size:12px;">Amount Due</td>
-                                            <td class="text-end" style="margin: 0px; padding: 0px;">
+                                            <td class="text-end" style="margin: 0px; padding: 0px; font-size:12px;">
                                                 <span t-field="o.amount_residual"/>
                                             </td>
                                         </tr>
